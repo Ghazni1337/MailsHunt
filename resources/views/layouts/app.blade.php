@@ -39,8 +39,8 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{csrf_token()}}">
 
-    <link rel="shortcut icon" href="{{ asset('image/fv.png') }}"/>
-    <link rel="icon" href="{{ asset('image/fv.png') }}">
+    <link rel="shortcut icon" href="{{ asset('image/icon.png') }}"/>
+    <link rel="icon" href="{{ asset('image/icon.png') }}">
     @section('title')
         <title>Find email addresses in seconds • MailsHunt</title>
 
@@ -73,11 +73,12 @@
             font-family: 'Quicksand', sans-serif;
             font-weight: 500;
         }
-        .nav-link {
-            color: #3fb0ac !important;
-        }
         .nav-link:hover {
-            color: #41e2de !important;
+            color: #000 !important;
+        }
+        .navbar-nav {
+            font-size: large;
+            font-weight: bold;
         }
         .sitemap {
             text-decoration: none !important;
@@ -101,8 +102,7 @@
     <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
         <div class="container">
             <a class="navbar-brand" href="/">
-                <h1>MailsHunt</h1>
-                {{--<img height="50px" src="{{ asset('image/logo.jpg') }}" alt="AtlMails Logo">--}}
+                <img height="50px" src="{{ asset('image/icon.png') }}" alt="AtlMails Logo">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -111,20 +111,28 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
-
+                    <li class="nav-item">
+                        <a class="nav-link" href="/domain-search"><img src="{{ asset('image/search.png') }}" height="30px" alt="Search MailsHunt"> Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/email-finder"><img src="{{ asset('image/find.png') }}" height="30px" alt="Finder MailsHunt"> Finder</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/email-verifier"><img src="{{ asset('image/approval.png') }}" height="30px" alt="Verifier MailsHunt"> Verifier</a>
+                    </li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
-                <ul class="navbar-nav ml-auto" style="font-size: large; font-weight: bold; color: #6b5b90 !important;">
-                    {{--<li class="nav-item">--}}
-                        {{--<a class="nav-link" href="/how-it-works">HOW IT WORKS</a>--}}
-                    {{--</li>--}}
-                    {{--<li class="nav-item">--}}
-                        {{--<a class="nav-link" href="/faq">FAQ</a>--}}
-                    {{--</li>--}}
-                    {{--<li class="nav-item">--}}
-                        {{--<a class="nav-link" href="/pro">PRO</a>--}}
-                    {{--</li>--}}
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" target="_blank" href="https://maildump.co/?ref=mailspre">APPS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/shop">SHOP</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/faq">FAQ</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/support">SUPPORT</a>
                     </li>

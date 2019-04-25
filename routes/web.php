@@ -41,4 +41,4 @@ Route::get('/support', function () {
     return view('support');
 });
 
-Route::post('/', 'MailController@search');
+Route::post('/domain-search', 'MailController@search');

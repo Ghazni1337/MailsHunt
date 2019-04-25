@@ -2,7 +2,20 @@
 
 @section('css')
     <style>
-
+        .error-msg {
+            color: #FA7C72;
+            border-radius: 1rem;
+            border: 1px solid #FA7C72;
+            font-size: 18px;
+            padding: 5px 10px;
+        }
+        .success-msg {
+            color: #80ee6e;
+            border-radius: 1rem;
+            border: 1px solid #80ee6e;
+            font-size: 18px;
+            padding: 5px 10px;
+        }
     </style>
 @stop
 

@@ -12,7 +12,7 @@
     <meta content="en" name="language">
     <link href="https://mailshunt.com/" rel="canonical">
     <link href="https://mailshunt.com/" rel="shortlink">
-    <link href="{{ asset('image/fv.png') }}" rel="image_src">
+    <link href="{{ asset('image/icon.png') }}" rel="image_src">
 
     <link rel="alternate" href="https://mailshunt.com/" hreflang="x-default"><link rel="alternate" href="https://mailshunt.com/" hreflang="en"><link rel="alternate" href="https://mailshunt.com/" hreflang="en-au"><link rel="alternate" href="https://mailshunt.com/" hreflang="en-br"><link rel="alternate" href="https://mailshunt.com/" hreflang="en-ca"><link rel="alternate" href="https://mailshunt.com/" hreflang="en-de"><link rel="alternate" href="https://mailshunt.com/" hreflang="en-gb"><link rel="alternate" href="https://mailshunt.com/" hreflang="en-in"><link rel="alternate" href="https://mailshunt.com/" hreflang="en-nl"><link rel="alternate" href="https://mailshunt.com/" hreflang="en-us">
 
@@ -20,7 +20,7 @@
     <meta class="swiftype" name="search_filters" data-type="enum" content="home">
     <meta class="swiftype" name="title" data-type="string" content="Find email addresses in seconds • MailsHunt">
     <meta class="swiftype" name="description" data-type="string" content="MailsHunt is the leading solution to find and verify professional email addresses. Start using MailsHunt and connect with the people that matter for your business.">
-    <meta class="swiftype" name="image" data-type="enum" content="{{ asset('image/fv.png') }}">
+    <meta class="swiftype" name="image" data-type="enum" content="{{ asset('image/icon.png') }}">
 
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
@@ -28,13 +28,13 @@
     <meta property="og:url" content="https://mailshunt.com/" />
     <meta property="og:site_name" content="MailsHunt" />
     <meta property="og:description" content="MailsHunt is the leading solution to find and verify professional email addresses. Start using MailsHunt and connect with the people that matter for your business.">
-    <meta property="og:image" content="{{ asset('image/fv.png') }}">
+    <meta property="og:image" content="{{ asset('image/icon.png') }}">
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Find email addresses in seconds • MailsHunt" />
     <meta name="twitter:domain" content="mailshunt.com"/>
     <meta name="twitter:description" content="MailsHunt is the leading solution to find and verify professional email addresses. Start using MailsHunt and connect with the people that matter for your business." />
-    <meta name="twitter:image" content="{{ asset('image/fv.png') }}" />
+    <meta name="twitter:image" content="{{ asset('image/icon.png') }}" />
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{csrf_token()}}">

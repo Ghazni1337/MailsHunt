@@ -14,6 +14,10 @@ class MailController extends Controller
             return \redirect('/domain-search')->withErrors("Please insert valid domain name")->withInput();
         }
 
+        if (in_array($domain,self::get_free_emails())) {
+            return \redirect('/domain-search')->withErrors("No email addresses found.")->withInput();
+        }
+
         $mails = Mail::select('mail')->where('mail', 'like', '%' . $domain)->get();
 
         if ($mails->isEmpty()) {

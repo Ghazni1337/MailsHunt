@@ -130,9 +130,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/shop">SHOP</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/faq">FAQ</a>
-                    </li>
+                    {{--<li class="nav-item">--}}
+                        {{--<a class="nav-link" href="/faq">FAQ</a>--}}
+                    {{--</li>--}}
                     <li class="nav-item">
                         <a class="nav-link" href="/support">SUPPORT</a>
                     </li>

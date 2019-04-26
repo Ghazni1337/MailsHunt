@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    <title>Support AltMail</title>
+    <title>Shop MailsHunt</title>
 @stop
 
 @section('css')
@@ -22,41 +22,41 @@
     <div class="container" style="padding-bottom: 60px">
         <div class="row">
             <div class="col-md-8 offset-md-2">
-                <h1>We're here to help!</h1>
+                <h1>Buy Bulk Email List</h1>
 
-                <p>Please feel free to Reach out if you have any question, we are 100% responsive and reply
-                    instantly.
-                    Please send us an e-mail at <a
-                            href="mailto:support@mailshunt.com"> support@mailshunt.com</a> or you can fill out below
-                    form. We are here to help you.</p>
-                {{--<p>--}}
-                    {{--Remember to check the <a--}}
-                            {{--href="/faq"> FAQ</a> and our <a href="/privacy.pdf"> Privacy Policy</a>.--}}
-                {{--</p>--}}
+                <p>For qualitative email campaigns, the main thing is an accurate email list.</p>
+                <p>MailsHunt offers the freshest most result driven email lists available. We pride ourselves in customer service and continued ongoing customer support.</p>
+                <p>Please fill out below form to get the most relevant quotation for your needs.</p>
                 <hr>
                 <form method="POST" action="https://formsubmit.co/9838707facadedf1b9bbebe70daa7970">
                     <div class="form-group">
                         <div class="form-row">
                             <div class="col">
-                                <input type="text" name="name" class="form-control" placeholder="Full Name"
-                                       value="{{ old('name') }}" required>
+                                <input type="text" name="name" class="form-control" placeholder="Full Name" required>
                             </div>
                             <div class="col">
-                                <input type="email" name="email" class="form-control" placeholder="Email Address"
-                                       value="{{ old('email') }}" required>
+                                <input type="email" name="email" class="form-control" placeholder="Email Address" required>
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="tell us about your problem" class="form-control" name="note" rows="14"
-                                  required>{{ old('note') }}</textarea>
+                        <div class="form-row">
+                            <div class="col">
+                                <input type="text" name="business_name" class="form-control" placeholder="Business Name" required>
+                            </div>
+                            <div class="col">
+                                <input type="url" name="business_website" class="form-control" placeholder="Business Website" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="tell us about your requirement" class="form-control" name="note" rows="8"
+                                  required></textarea>
                     </div>
                     <input type="text" name="_honey" style="display:none">
                     <input type="hidden" name="_replyto">
                     <input type="hidden" name="_cc" value="devrolabs@gmail.com">
-                    <button type="submit" class="btn btn-lg btn-dark btn-block"><i class="fa fa-paper-plane"></i> Submit
-                        Form
-                    </button>
+                    <button type="submit" class="btn btn-lg btn-info btn-block"><i class="fas fa-book-open"></i> Get Free Quote</button>
                 </form>
             </div>
         </div>

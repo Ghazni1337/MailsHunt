@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    <title>Support AltMail</title>
+    <title>Support MailsHunt</title>
 @stop
 
 @section('css')
@@ -48,7 +48,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="tell us about your problem" class="form-control" name="note" rows="14"
+                        <textarea placeholder="tell us about your problem" class="form-control" name="note" rows="10"
                                   required>{{ old('note') }}</textarea>
                     </div>
                     <input type="text" name="_honey" style="display:none">

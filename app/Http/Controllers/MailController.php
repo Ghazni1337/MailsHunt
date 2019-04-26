@@ -16,7 +16,7 @@ class MailController extends Controller
 
         $mails = Mail::select('mail')->where('mail', 'like', '%' . $domain)->get();
 
-        if (!$mails) {
+        if ($mails->isEmpty()) {
             return \redirect('/domain-search')->withErrors("No email addresses found.")->withInput();
         }
 
@@ -36,8 +36,8 @@ class MailController extends Controller
 
         $mails = Mail::select('mail')->where('mail', 'like', '%' . $name[0] . '%' . '%' . $name[1] . '%' . '%' . $domain)->get();
 
-        if (!$mails) {
-            return \redirect('/domain-search')->withErrors("No email addresses found.")->withInput();
+        if ($mails->isEmpty()) {
+            return \redirect('/email-finder')->withErrors("No email addresses found.")->withInput();
         }
 
         return view("finder", ['mails' => $mails]);

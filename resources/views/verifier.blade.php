@@ -16,7 +16,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2" style="margin-top: 50px;">
-                <div class="jumbotron" style="border: 1px solid black">
+                <div class="jumbotron" style="box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); padding: 2rem 2rem !important;">
                     <div class="errors">
                         @if ($errors->any())
                             <div style="text-align: center; line-height: 40px;">

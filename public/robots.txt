@@ -1,2 +1,4 @@
-User-agent: *
+User-Agent: *
 Disallow:
+
+Sitemap: https://mailshunt.com/sitemap.xml

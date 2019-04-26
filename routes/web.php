@@ -44,3 +44,5 @@ Route::get('/support', function () {
 Route::post('/domain-search', 'MailController@search');
 
 Route::post('/email-finder', 'MailController@find');
+
+Route::post('/email-verifier', 'MailController@verify');

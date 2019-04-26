@@ -9,13 +9,6 @@
             font-size: 18px;
             padding: 5px 10px;
         }
-        .success-msg {
-            color: #80ee6e;
-            border-radius: 1rem;
-            border: 1px solid #80ee6e;
-            font-size: 18px;
-            padding: 5px 10px;
-        }
     </style>
 @stop
 
@@ -33,14 +26,8 @@
                                 @endforeach
                             </div>
                         @endif
-                        @if (isset($mgs))
-                            <div style="text-align: center; line-height: 40px;">
-                                <p class="text-center success-msg"><i class="fa fa-check-circle"
-                                                                      aria-hidden="true"></i> {{$mgs}}
-                                </p>
-                            </div>
-                        @endif
                     </div>
+                    <h4 style="margin-bottom: 20px">Domain Search</h4>
                     <form id="target" action="/domain-search" method="POST">
                         @csrf
                         <div class="form-group">
@@ -49,30 +36,49 @@
                                        placeholder="company.com"
                                        value="{{ old('domain') }}" required>
                                 <div class="input-group-append">
-                                    <button type="submit" class="btn btn-defalt btn-block btn-lg"><strong>
-                                            Find emails addresses</strong></button>
+                                    <button type="submit" class="btn btn-defalt btn-block btn-lg"><strong><i
+                                                    class="fas fa-search"></i></strong></button>
                                 </div>
                             </div>
                         </div>
                     </form>
+                    <p>Enter a domain name to find email addresses.</p>
                 </div>
             </div>
         </div>
     </div>
 
+
+
+    @if(!isset($mails))
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2 text-center">
+                <mark style="background-color: #103742; color: white; padding: 5px">DOMAIN SEARCH</mark>
+                <h4 style="padding: 20px 0; color: #103742; font-weight: bold;">Get the email addresses behind any
+                    website.</h4>
+                <p style="font-size: 16px">The Domain Search lists all the people working in a company with their name
+                    and email address found on the web. With 200+ million email addresses indexed, effective search
+                    filters and scoring, it's the most powerful email-finding tool ever created.</p>
+            </div>
+        </div>
+    </div>
+    @endif
+
+
+    @if(isset($mails))
     <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <ul class="list-group">
-                    @if(isset($mails))
-                        @foreach($mails as $mail)
-                            <li class="list-group-item">{{$mail->mail}} <span style="float: right"><a href="mailto:{{$mail->mail}}"><i class="fa fa-envelope" aria-hidden="true"></i></a></span></li>
-                        @endforeach
-                    @endif
+                    @foreach($mails as $mail)
+                        <li class="list-group-item">{{$mail->mail}} <span style="float: right"><a href="mailto:{{$mail->mail}}"><i class="fa fa-envelope" aria-hidden="true"></i></a></span></li>
+                    @endforeach
                 </ul>
             </div>
         </div>
     </div>
+    @endif
 
 @stop
 

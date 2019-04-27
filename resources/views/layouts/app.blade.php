@@ -32,6 +32,7 @@
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Find email addresses in seconds • MailsHunt" />
+    <meta property="twitter:site" content="@DevroLABS">
     <meta name="twitter:domain" content="mailshunt.com"/>
     <meta name="twitter:description" content="MailsHunt is the leading solution to find and verify professional email addresses. Start using MailsHunt and connect with the people that matter for your business." />
     <meta name="twitter:image" content="{{ asset('image/icon.png') }}" />
@@ -169,5 +170,75 @@
     @section('js')
 
     @show
+    <script type="application/ld+json">
+    {
+    	"@context": "http://schema.org",
+    	"@type": "Organization",
+    	"name": "Devro LABS",
+    	"url": "https://devrolabs.com",
+    	"contactPoint": {
+    		"@type": "ContactPoint",
+    		"image": [{
+    			"@type": "ImageObject",
+    			"height": "30",
+    			"url": "https://devrolabs.com/image/logo.png",
+    			"width": "200",
+    			"@id": "https://devrolabs.com/image/logo.png"
+    		}, "https://devrolabs.com/image/logo.png"],
+    		"availableLanguage": ["https://en.wikipedia.org/wiki/English_language"],
+    		"description": "Our teams are here to help.",
+    		"contactType": "customer service",
+    		"name": "Customer Service",
+    		"areaServed": "https://en.wikipedia.org/wiki/Earth",
+    		"url": "https://devrolabs.com/contact",
+    		"@id": "https://devrolabs.com/contact"
+    	},
+    	"sameAs": [
+    		"https://www.facebook.com/devrolabs",
+    		"https://twitter.com/DevroLABS",
+    		"https://www.linkedin.com/company/devrolabs",
+    		"https://github.com/kesarawimal"
+    	],
+    	"logo": "https://devrolabs.com/image/favicon.png",
+    	"description": "Devro LABS is the most innovative company which has a series of products with millions of monthly active users. We build products to expedite your productivity.",
+    	"@id": "https://devrolabs.com",
+    	"brand": [{
+    		"@type": "Product",
+    		"url": "https://formsubmit.co",
+    		"name": "FormSubmit",
+    		"description": "FormSubmit sends your site's form submission directly to your inbox without the need of any backend code or SMTP setup."
+    	}, {
+    		"@type": "Product",
+    		"url": "https://altmails.com",
+    		"name": "AltMails",
+    		"description": "Disposable temporary email addresses that you can use when signing up on websites to protect your identity and prevent your personal email address from being sold or spammed."
+    	}, {
+    		"@type": "Product",
+    		"url": "https://safenote.co",
+    		"name": "SafeNote",
+    		"description": "Encrypt and send files and notes with a link that automatically destruct after being read to ensure your important documents don’t stay online forever."
+    	}, {
+    		"@type": "Product",
+    		"url": "https://mailshunt.com",
+    		"name": "MailsHunt",
+    		"description": "MailsHunt is the leading solution to find and verify professional email addresses. Start using MailsHunt and connect with the people that matter for your business."
+    	}, {
+    		"@type": "Product",
+    		"url": "https://mailspre.com",
+    		"name": "Mailspre",
+    		"description": "Send an anonymous email for free, you can send unlimited emails securely with Mailspre no registration required."
+    	}, {
+    		"@type": "Product",
+    		"url": "https://maildump.co",
+    		"name": "MailDump",
+    		"description": "Collecting email addresses, it’s not hard & time-consuming anymore and this time it is free for you. Collect more email addresses and get more leads with MailDump!"
+    	}, {
+    		"@type": "Product",
+    		"url": "https://tabnote.co",
+    		"name": "TabNote",
+    		"description": "TabNote is a free and offline chrome extension which can use to take notes while browsing the web. It's a single click notepad which improves your productivity."
+    	}]
+    }
+    </script>
 </body>
 </html>

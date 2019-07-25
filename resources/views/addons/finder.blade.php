@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    <title>MailDump Finder Extension</title>
+    <title>Email Finder Extension</title>
 @stop
 
 @section('css')

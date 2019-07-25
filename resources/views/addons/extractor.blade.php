@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    <title>MailDump Extension</title>
+    <title>Email Extractor Extension</title>
 @stop
 
 @section('css')

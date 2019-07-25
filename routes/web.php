@@ -41,6 +41,21 @@ Route::get('/support', function () {
     return view('support');
 });
 
+//addons
+Route::get('/addons', function () {
+    return view('addons.home');
+});
+Route::get('/addons/domain-extractor', function () {
+    return view('addons.extractor');
+});
+Route::get('/addons/email-finder', function () {
+    return view('addons.finder');
+});
+Route::get('/addons/email-verifier', function () {
+    return view('addons.verifier');
+});
+//end addons
+
 Route::post('/domain-search', 'MailController@search');
 
 Route::post('/email-finder', 'MailController@find');

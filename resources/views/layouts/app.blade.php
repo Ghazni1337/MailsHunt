@@ -124,15 +124,31 @@
             border-radius: 3px;
             padding: 2rem 2rem !important;
         }
-        .desc mark {
+        mark {
             background-color: #7e57c2;
             color: white;
-            padding: 5px 10px
+            padding: 5px 10px;
+            text-transform: uppercase;
         }
         .desc h4 {
             padding: 20px 0;
             color: #103742;
             font-weight: bold;
+        }
+
+        /*addons*/
+        .addons {
+            margin-top: 80px;
+        }
+        .addons h4 {
+            padding: 20px 0;
+            color: #103742;
+            font-weight: bold;
+            font-size: 30px;
+        }
+        .addons p {
+            font-size: 16px;
+            text-align: left;
         }
 
         /*email list*/

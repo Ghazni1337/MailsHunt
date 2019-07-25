@@ -57,7 +57,6 @@ Route::get('/addons/email-verifier', function () {
 //end addons
 
 Route::post('/domain-search', 'MailController@search');
-
 Route::post('/email-finder', 'MailController@find');
-
 Route::post('/email-verifier', 'MailController@verify');
+Route::get('/email-verifier/{email}', 'MailController@verify');

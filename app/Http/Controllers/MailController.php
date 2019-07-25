@@ -47,9 +47,13 @@ class MailController extends Controller
         return view("finder", ['mails' => $mails, 'domain' => $domain, 'name' => $request->name]);
     }
 
-    public function verify(Request $request)
+    public function verify(Request $request, $mail = null)
     {
-        $email = $request->email;
+        $email = $mail;
+        if ($request->isMethod('post')) {
+            $email = $request->email;
+        }
+
         $sanitized = filter_var($email, FILTER_SANITIZE_EMAIL);
         if (!filter_var($sanitized, FILTER_VALIDATE_EMAIL)) {
             $valid_format = false;

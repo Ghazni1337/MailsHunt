@@ -16,7 +16,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2" style="margin-top: 50px;">
-                <div class="jumbotron" style="box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); padding: 2rem 2rem !important;">
+                <div class="jumbotron">
                     <div class="errors">
                         @if ($errors->any())
                             <div style="text-align: center; line-height: 40px;">
@@ -51,11 +51,11 @@
 
 
     @if(!isset($mails))
-    <div class="container">
+    <div class="container desc">
         <div class="row">
             <div class="col-md-8 offset-md-2 text-center">
-                <mark style="background-color: #103742; color: white; padding: 5px">DOMAIN SEARCH</mark>
-                <h4 style="padding: 20px 0; color: #103742; font-weight: bold;">Get the email addresses behind any
+                <mark>DOMAIN SEARCH</mark>
+                <h4>Get the email addresses behind any
                     website.</h4>
                 <p style="font-size: 16px">The Domain Search lists all the people working in a company with their name
                     and email address found on the web. With 200+ million email addresses indexed, effective search

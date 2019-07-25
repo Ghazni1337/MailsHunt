@@ -23,7 +23,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 offset-lg-2" style="margin-top: 50px;">
-                <div class="jumbotron" style="box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); padding: 2rem 2rem !important;">
+                <div class="jumbotron">
                     <div class="errors">
                         @if ($errors->any())
                             <div style="text-align: center; line-height: 40px;">
@@ -62,11 +62,11 @@
     </div>
 
     @if(!isset($mails))
-        <div class="container">
+        <div class="container desc">
             <div class="row">
                 <div class="col-md-8 offset-md-2 text-center">
-                    <mark style="background-color: #103742; color: white; padding: 5px">EMAIL FINDER</mark>
-                    <h4 style="padding: 20px 0; color: #103742; font-weight: bold;">Find the email address of any
+                    <mark>EMAIL FINDER</mark>
+                    <h4>Find the email address of any
                         professional.</h4>
                     <p style="font-size: 16px">Find the email addresses of people you want to contact one by one or in
                         bulk to enrich your database. The Email Finder uses a large number of signals to find the proven

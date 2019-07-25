@@ -78,7 +78,7 @@
             border-radius: 0;
         }
         .nav-link:hover {
-            color: #000 !important;
+            color: #a459ea !important;
         }
         .nav-link {
             color: #7e57c2 !important;
@@ -115,6 +115,22 @@
         .footer-basic-centered p {
             margin-bottom: 5px;
             font-size: 15px !important;
+        }
+        .jumbotron {
+            background-color: #fff;
+            box-shadow: 0 6px 30px rgba(0,0,0,.25);
+            border-radius: 3px;
+            padding: 2rem 2rem !important;
+        }
+        .desc mark {
+            background-color: #7e57c2;
+            color: white;
+            padding: 5px 10px
+        }
+        .desc h4 {
+            padding: 20px 0;
+            color: #103742;
+            font-weight: bold;
         }
     </style>
 
@@ -175,26 +191,26 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3" style="padding-bottom: 20px">
-                    <p style="padding-bottom: 6px"><strong>PRODUCTS</strong></p>
+                    <p style="padding-bottom: 10px; letter-spacing: 2px"><strong>PRODUCTS</strong></p>
                     <p><a href="/domain-search">Domain Search</a></p>
                     <p><a href="/email-finder">Email Finder</a></p>
                     <p><a href="/email-verifier">Email Verifier</a></p>
                     <p><a href="/api">API</a></p>
                 </div>
                 <div class="col-md-3" style="padding-bottom: 20px">
-                    <p style="padding-bottom: 6px"><strong>ADD-ONS</strong></p>
+                    <p style="padding-bottom: 10px; letter-spacing: 2px"><strong>ADD-ONS</strong></p>
                     <p><a href="/addons/domain-extractor">Email Extractor</a></p>
                     <p><a href="/addons/email-finder">Email Finder</a></p>
                     <p><a href="/addons/email-verifier">Email Verifier</a></p>
                 </div>
                 <div class="col-md-3" style="padding-bottom: 20px">
-                    <p style="padding-bottom: 6px"><strong>DEVRO LABS</strong></p>
+                    <p style="padding-bottom: 10px; letter-spacing: 2px"><strong>DEVRO LABS</strong></p>
                     <p><a target="_blank" href="https://devrolabs.com/products-landing-page">Products</a></p>
                     <p><a target="_blank" href="https://devrolabs.com/">Company</a></p>
                     <p><a target="_blank" href="https://medium.com/devrolabs">Blog</a></p>
                 </div>
                 <div class="col-md-3" style="padding-bottom: 20px">
-                    <p style="padding-bottom: 6px"><strong>SUPPORT</strong></p>
+                    <p style="padding-bottom: 10px; letter-spacing: 2px"><strong>SUPPORT</strong></p>
                     <p><a href="/support">Help Center</a></p>
                     <p><a href="mailto:support@mailshunt.com"><i class="fa fa-envelope" aria-hidden="true"></i> support@mailshunt.com</a></p>
                 </div>

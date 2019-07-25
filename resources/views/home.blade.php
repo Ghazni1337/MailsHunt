@@ -9,6 +9,14 @@
             font-size: 18px;
             padding: 5px 10px;
         }
+        .btn-primary {
+             background-color: #7e57c2;
+             border-color: #7e57c2;
+        }
+        .btn-primary:hover {
+             background-color: #a459ea;
+             border-color: #a459ea;
+        }
     </style>
 @stop
 
@@ -70,9 +78,23 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
+                <div style="margin-bottom: 10px; text-align: right">
+                    <button class="btn btn-sm btn-primary" type="button">Copy All</button>
+                    <button class="btn btn-sm btn-primary" type="button">Download CSV</button>
+                </div>
                 <ul class="list-group">
                     @foreach($mails as $mail)
-                        <li class="list-group-item">{{$mail->mail}} <span style="float: right"><a href="mailto:{{$mail->mail}}"><i class="fa fa-envelope" aria-hidden="true"></i></a></span></li>
+                        <li class="list-group-item">{{$mail->mail}}
+                            <span style="float: right">
+                                <i title="copy" id="copy" onclick="copyMail(this)" class="fas fa-copy"></i>
+                                <a title="verify" href="email-verifier/{{$mail->mail}}">
+                                    <i class="fas fa-user-check"></i>
+                                </a>
+                                <a title="mailto" href="mailto:{{$mail->mail}}">
+                                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                                </a>
+                            </span>
+                        </li>
                     @endforeach
                 </ul>
             </div>
@@ -84,4 +106,19 @@
 
 @section('js')
 
+    <script>
+        function copyMail(elem) {
+            var $body = document.getElementsByTagName('body')[0];
+            var copyText = $(elem).closest("li").text().trim();
+
+            var $tempInput = document.createElement('INPUT');
+            $body.appendChild($tempInput);
+            $tempInput.setAttribute('value', copyText);
+
+            $tempInput.select();
+            document.execCommand("copy");
+
+            $body.removeChild($tempInput);
+        }
+    </script>
 @stop

@@ -116,6 +116,8 @@
             margin-bottom: 5px;
             font-size: 15px !important;
         }
+
+        /*bottom description*/
         .jumbotron {
             background-color: #fff;
             box-shadow: 0 6px 30px rgba(0,0,0,.25);
@@ -131,6 +133,22 @@
             padding: 20px 0;
             color: #103742;
             font-weight: bold;
+        }
+
+        /*email list*/
+        .list-group-item i {
+            padding-left: 10px;
+        }
+        .list-group-item a {
+            text-decoration: none;
+            color: #7e57c2;
+        }
+        .list-group-item a:hover {
+            color: #a459ea;
+        }
+        #copy {
+            cursor: pointer;
+            color: #7e57c2;
         }
     </style>
 

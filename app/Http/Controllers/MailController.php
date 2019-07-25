@@ -24,7 +24,7 @@ class MailController extends Controller
             return \redirect('/domain-search')->withErrors("No email addresses found.")->withInput();
         }
 
-        return view("home", ['mails' => $mails]);
+        return view("home", ['mails' => $mails, 'domain' => $domain]);
     }
 
     public function find(Request $request)
@@ -44,7 +44,7 @@ class MailController extends Controller
             return \redirect('/email-finder')->withErrors("No email addresses found.")->withInput();
         }
 
-        return view("finder", ['mails' => $mails]);
+        return view("finder", ['mails' => $mails, 'domain' => $domain, 'name' => $request->name]);
     }
 
     public function verify(Request $request)
@@ -103,7 +103,7 @@ class MailController extends Controller
 
         $verify = ["email"=>$email, "deliverable"=>$deliverable, "valid_format"=>$valid_format, "disposable"=>$disposable, "role"=>$role, "free"=>$free, "server_status"=>$server_status, "email_domain"=>$email_domain, "email_user"=>$email_user];
 
-        return view("verifier", ['verify' => $verify]);
+        return view("verifier", ['verify' => $verify, 'email' => $email]);
     }
 
     private static function get_banned_domains()

@@ -143,9 +143,6 @@
             text-decoration: none;
             color: #7e57c2;
         }
-        .list-group-item a:hover {
-            color: #a459ea;
-        }
         #copy {
             cursor: pointer;
             color: #7e57c2;

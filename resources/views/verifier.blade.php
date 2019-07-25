@@ -34,7 +34,7 @@
                             <div class="input-group input-group-lg">
                                 <input type="email" name="email" class="form-control form-control-lg"
                                        placeholder="janedoe@company.com"
-                                       value="{{ old('email') }}" required>
+                                       value="{{ isset($email) ? $email : old('email') }}" required>
                                 <div class="input-group-append">
                                     <button type="submit" class="btn btn-defalt btn-block btn-lg">
                                         <strong>Verify</strong></button>

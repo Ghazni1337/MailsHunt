@@ -62,7 +62,7 @@
     <!-- Fonts -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Quicksand:500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @section('css')
@@ -70,36 +70,58 @@
     @show
     <style>
         body {
-            font-family: 'Quicksand', sans-serif;
             font-weight: 500;
+        }
+        .navbar {
+            background-color: white;
+            border-bottom: 1px solid #e6e6e6;
+            border-radius: 0;
         }
         .nav-link:hover {
             color: #000 !important;
+        }
+        .nav-link {
+            color: #7e57c2 !important;
         }
         .navbar-nav {
             font-size: large;
             font-weight: bold;
         }
-        .sitemap {
-            text-decoration: none !important;
-            color: black;
-        }
-        .footer-basic-centered{
-             box-sizing: border-box;
-             width: 100%;
-             text-align: center;
+        .footer-basic-centered {
+            width: 100%;
+            text-align: left;
             margin-top: 100px;
-         }
+            padding-bottom: 35px;
+            background-color: #2a2a2a;
+            padding-top: 80px;
+            color: white;
+            letter-spacing: 1px;
+        }
+
         .social {
-            color: black;
+            color: #fff !important;
             padding-right: 35px;
+        }
+
+        .footer-basic-centered a {
+            text-decoration: none !important;
+            color: #aeaeae;
+        }
+
+        .footer-basic-centered a:hover {
+            color: #fff !important;
+        }
+
+        .footer-basic-centered p {
+            margin-bottom: 5px;
+            font-size: 15px !important;
         }
     </style>
 
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+    <nav class="navbar navbar-expand-md navbar-light">
         <div class="container">
             <a class="navbar-brand" href="/">
                 <img height="50px" src="{{ asset('image/icon.png') }}" alt="AtlMails Logo">
@@ -125,7 +147,7 @@
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" target="_blank" href="https://maildump.co/?ref=mailspre">APPS</a>
+                        <a class="nav-link" href="/addons">ADD-ONS</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/shop">SHOP</a>
@@ -150,20 +172,48 @@
     </div>
 
     <footer class="footer-basic-centered">
-        <hr>
-        <div class="container-fluid" style="margin: 30px 0 !important;">
+        <div class="container">
             <div class="row">
-                <div class="col-md-4">
-                    <p class="footer-company-name">© Copyright 2019 MailsHunt - All Rights Reserved</p>
+                <div class="col-md-3" style="padding-bottom: 20px">
+                    <p style="padding-bottom: 6px"><strong>PRODUCTS</strong></p>
+                    <p><a href="/domain-search">Domain Search</a></p>
+                    <p><a href="/email-finder">Email Finder</a></p>
+                    <p><a href="/email-verifier">Email Verifier</a></p>
+                    <p><a href="/api">API</a></p>
                 </div>
-                <div class="col-md-4">
-                    <a class="social" target="_blank" href="https://www.facebook.com/devrolabs"><i class="fab fa-facebook-f fa-2x"></i></a> <a class="social" target="_blank" href="https://twitter.com/DevroLABS"><i class="fab fa-twitter fa-2x"></i></a>
-                    <a class="social" target="_blank" href="https://github.com/devrolabs"><i class="fab fa-github fa-2x"></i></a> <a style="color: black" target="_blank" href="https://www.linkedin.com/company/devrolabs"><i class="fab fa-linkedin-in fa-2x"></i></a>
+                <div class="col-md-3" style="padding-bottom: 20px">
+                    <p style="padding-bottom: 6px"><strong>ADD-ONS</strong></p>
+                    <p><a href="/addons/domain-extractor">Email Extractor</a></p>
+                    <p><a href="/addons/email-finder">Email Finder</a></p>
+                    <p><a href="/addons/email-verifier">Email Verifier</a></p>
                 </div>
-                <div class="col-md-4">
-                    <p style="margin-bottom: 0px !important;">MailsHunt by <a target="_blank" style="color: inherit; text-decoration: inherit;" href="https://devrolabs.com"><strong>Devro LABS</strong></a></p>
+                <div class="col-md-3" style="padding-bottom: 20px">
+                    <p style="padding-bottom: 6px"><strong>DEVRO LABS</strong></p>
+                    <p><a target="_blank" href="https://devrolabs.com/products-landing-page">Products</a></p>
+                    <p><a target="_blank" href="https://devrolabs.com/">Company</a></p>
+                    <p><a target="_blank" href="https://medium.com/devrolabs">Blog</a></p>
+                </div>
+                <div class="col-md-3" style="padding-bottom: 20px">
+                    <p style="padding-bottom: 6px"><strong>SUPPORT</strong></p>
+                    <p><a href="/support">Help Center</a></p>
+                    <p><a href="mailto:support@mailshunt.com"><i class="fa fa-envelope" aria-hidden="true"></i> support@mailshunt.com</a></p>
                 </div>
             </div>
+        </div>
+        <hr>
+        <div class="container" style="text-align: left">
+            <span style="float: left; color: #aeaeae">Copyright © 2019 <a style="color: white;" target="_blank" href="https://devrolabs.com/">Devro LABS</a></span>
+            <span style="float: right">
+                    <a class="social" target="_blank" href="https://www.facebook.com/devrolabs"><i
+                                class="fab fa-facebook-f"></i></a> <a class="social" target="_blank"
+                                                                      href="https://twitter.com/DevroLABS"><i
+                            class="fab fa-twitter"></i></a>
+                    <a class="social" target="_blank" href="https://github.com/devrolabs"><i class="fab fa-github"></i></a> <a
+                        class="social" style="color: black" target="_blank"
+                        href="https://www.linkedin.com/company/devrolabs"><i class="fab fa-linkedin-in"></i></a> <a
+                        style="color: white" target="_blank" href="https://pinterest.com/devrolabs"><i
+                            class="fab fa-pinterest-p"></i></a>
+            </span>
         </div>
     </footer>
     @section('js')

@@ -110,7 +110,7 @@ class MailController extends Controller
         return view("verifier", ['verify' => $verify, 'email' => $email]);
     }
 
-    private static function get_banned_domains()
+    public static function get_banned_domains()
     {
         //where we store the banned domains
         $file = storage_path('app/banned_domains.json');
@@ -126,7 +126,7 @@ class MailController extends Controller
         return json_decode($banned_domains);
     }
 
-    private static function get_role_emails()
+    public static function get_role_emails()
     {
         $file = storage_path('app/role_emails.json');
         if (file_exists($file))
@@ -138,7 +138,7 @@ class MailController extends Controller
         return json_decode($role_emails);
     }
 
-    private static function get_free_emails()
+    public static function get_free_emails()
     {
         $file = storage_path('app/free_emails.txt');
         if (file_exists($file))

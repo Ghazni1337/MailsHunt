@@ -226,7 +226,7 @@
                     <p><a href="/domain-search">Domain Search</a></p>
                     <p><a href="/email-finder">Email Finder</a></p>
                     <p><a href="/email-verifier">Email Verifier</a></p>
-                    <p><a href="/api">API</a></p>
+                    <p><a href="/email-verifier-api">API</a></p>
                 </div>
                 <div class="col-md-3" style="padding-bottom: 20px">
                     <p style="padding-bottom: 10px; letter-spacing: 2px"><strong>ADD-ONS</strong></p>

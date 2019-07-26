@@ -33,6 +33,10 @@ Route::get('/shop', function () {
     return view('shop');
 });
 
+Route::get('/email-verifier-api', function () {
+    return view('api');
+});
+
 //Route::get('/faq', function () {
 //    return view('faq');
 //});
@@ -60,3 +64,4 @@ Route::post('/domain-search', 'MailController@search');
 Route::post('/email-finder', 'MailController@find');
 Route::post('/email-verifier', 'MailController@verify');
 Route::get('/email-verifier/{email}', 'MailController@verify');
+Route::get('/api/verifier-lookup/{email}', 'APIController@verifierLookup');

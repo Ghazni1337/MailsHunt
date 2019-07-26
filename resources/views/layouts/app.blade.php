@@ -246,21 +246,25 @@
                     <p><a href="mailto:support@mailshunt.com"><i class="fa fa-envelope" aria-hidden="true"></i> support@mailshunt.com</a></p>
                 </div>
             </div>
-        </div>
-        <hr>
-        <div class="container" style="text-align: left">
-            <span style="float: left; color: #aeaeae">Copyright © 2019 <a style="color: white;" target="_blank" href="https://devrolabs.com/">Devro LABS</a></span>
-            <span style="float: right">
+            <hr style="background-color: #aeaeae;">
+            <div class="row">
+                <div class="col-sm-6">
+                    <span style="float: left; color: #aeaeae">Copyright © 2019 <a style="color: white;" target="_blank" href="https://devrolabs.com/">Devro LABS</a></span>
+                </div>
+                <div class="col-sm-6">
+                    <span style="float: right">
                     <a class="social" target="_blank" href="https://www.facebook.com/devrolabs"><i
                                 class="fab fa-facebook-f"></i></a> <a class="social" target="_blank"
                                                                       href="https://twitter.com/DevroLABS"><i
-                            class="fab fa-twitter"></i></a>
+                                    class="fab fa-twitter"></i></a>
                     <a class="social" target="_blank" href="https://github.com/devrolabs"><i class="fab fa-github"></i></a> <a
-                        class="social" style="color: black" target="_blank"
-                        href="https://www.linkedin.com/company/devrolabs"><i class="fab fa-linkedin-in"></i></a> <a
-                        style="color: white" target="_blank" href="https://pinterest.com/devrolabs"><i
-                            class="fab fa-pinterest-p"></i></a>
-            </span>
+                                class="social" style="color: black" target="_blank"
+                                href="https://www.linkedin.com/company/devrolabs"><i class="fab fa-linkedin-in"></i></a> <a
+                                style="color: white" target="_blank" href="https://pinterest.com/devrolabs"><i
+                                    class="fab fa-pinterest-p"></i></a>
+                    </span>
+                </div>
+            </div>
         </div>
     </footer>
     @section('js')

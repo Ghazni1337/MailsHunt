@@ -100,6 +100,9 @@
                         </li>
                     @endforeach
                 </ul>
+                @if(count($mails) === 25)
+                    <a style="width: 100%; text-align: center; margin-top: 40px" href="/shop" class="btn btn-primary">All search queries limited to 25 results. Get more from the Shop!</a>
+                @endif
             </div>
         </div>
     </div>

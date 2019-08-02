@@ -19,12 +19,12 @@
 @stop
 
 @section('content')
-    <div class="container" style="padding-bottom: 60px">
+    <div class="container" style="padding-bottom: 60px; margin-top: 60px">
         <div class="row">
-            <div class="col-md-8 offset-md-2">
-                <h1>Buy Bulk Email List</h1>
+            <div class="col-md-8 offset-md-2 text-center">
+                <mark>Buy Bulk Email List</mark>
 
-                <p>For qualitative email campaigns, the main thing is an accurate email list.</p>
+                <p style="margin-top: 40px">For qualitative email campaigns, the main thing is an accurate email list.</p>
                 <p>MailsHunt offers the freshest most result driven email lists available. We pride ourselves in customer service and continued ongoing customer support.</p>
                 <p>Please fill out below form to get the most relevant quotation for your needs.</p>
                 <hr>
@@ -42,10 +42,10 @@
                     <div class="form-group">
                         <div class="form-row">
                             <div class="col">
-                                <input type="text" name="business_name" class="form-control" placeholder="Business Name" required>
+                                <input type="text" name="business_name" class="form-control" placeholder="Business Name (optional)">
                             </div>
                             <div class="col">
-                                <input type="url" name="business_website" class="form-control" placeholder="Business Website" required>
+                                <input type="url" name="business_website" class="form-control" placeholder="Business Website (optional)">
                             </div>
                         </div>
                     </div>

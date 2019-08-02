@@ -9,30 +9,18 @@
         .container p {
             font-size: 17px;
         }
-
-        h1 {
-            text-align: center;
-            color: #103742;
-            padding: 40px 0;
-        }
     </style>
 @stop
 
 @section('content')
-    <div class="container" style="padding-bottom: 60px">
+    <div class="container" style="margin-bottom: 60px; margin-top: 60px">
         <div class="row">
-            <div class="col-md-8 offset-md-2">
-                <h1>We're here to help!</h1>
+            <div class="col-md-8 offset-md-2 text-center">
+                <mark>HAVE ANY QUESTIONS?</mark>
 
-                <p>Please feel free to Reach out if you have any question, we are 100% responsive and reply
-                    instantly.
-                    Please send us an e-mail at <a
-                            href="mailto:support@mailshunt.com"> support@mailshunt.com</a> or you can fill out below
-                    form. We are here to help you.</p>
-                {{--<p>--}}
-                    {{--Remember to check the <a--}}
-                            {{--href="/faq"> FAQ</a> and our <a href="/privacy.pdf"> Privacy Policy</a>.--}}
-                {{--</p>--}}
+                <p style="margin-top: 40px">Feel free to reach out to us by sending an email to <a
+                            href="mailto:support@mailshunt.com"> support@mailshunt.com</a> or by filling out the form below.</p>
+                <p>You will receive an instant response from a member of our team.</p>
                 <hr>
                 <form method="POST" action="https://formsubmit.co/9838707facadedf1b9bbebe70daa7970">
                     <div class="form-group">

@@ -14,11 +14,7 @@ class MailController extends Controller
             return \redirect('/domain-search')->withErrors("Please insert valid domain name")->withInput();
         }
 
-        if (in_array($domain,self::get_free_emails())) {
-            return \redirect('/domain-search')->withErrors("No email addresses found.")->withInput();
-        }
-
-        $mails = Mail::select('mail')->where('mail', 'like', '%' . $domain)->get();
+        $mails = Mail::select('mail')->where('mail', 'like', '%@' . $domain)->whereRaw("'mail' NOT REGEXP '^[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$'")->limit(25)->get();
 
         if ($mails->isEmpty()) {
             return \redirect('/domain-search')->withErrors("No email addresses found.")->withInput();
@@ -38,7 +34,7 @@ class MailController extends Controller
             return \redirect('/email-finder')->withErrors("Please insert full name")->withInput();
         }
 
-        $mails = Mail::select('mail')->where('mail', 'like', '%' . $name[0] . '%' . '%' . $name[1] . '%' . '%' . $domain)->get();
+        $mails = Mail::select('mail')->where('mail', 'like', '%' . $name[0] . '%' . '%' . $name[1] . '%' . '%@' . $domain)->whereRaw("'mail' NOT REGEXP '^[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$'")->limit(25)->get();
 
         if ($mails->isEmpty()) {
             return \redirect('/email-finder')->withErrors("No email addresses found.")->withInput();

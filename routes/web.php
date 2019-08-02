@@ -37,10 +37,6 @@ Route::get('/email-verifier-api', function () {
     return view('api');
 });
 
-//Route::get('/faq', function () {
-//    return view('faq');
-//});
-
 Route::get('/support', function () {
     return view('support');
 });

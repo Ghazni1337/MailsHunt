@@ -69,9 +69,7 @@
                     <mark>EMAIL FINDER</mark>
                     <h4>Find the email address of any
                         professional.</h4>
-                    <p style="font-size: 16px">Find the email addresses of people you want to contact one by one or in
-                        bulk to enrich your database. The Email Finder uses a large number of signals to find the proven
-                        or most probable email address of anyone in a fraction of second.</p>
+                    <p style="font-size: 16px">Find the email addresses of people who matter to you or your business. The Email Finder uses a large number of data to find the proven or most probable email address of anyone within a second.</p>
                 </div>
             </div>
         </div>

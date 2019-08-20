@@ -89,19 +89,15 @@ class MailController extends Controller
             $server_status = true;
         }
 
-        // 6 - check deliverable
-        if ($valid_format && $server_status) {
-            $deliverable = true;
+        if (!$server_status || !$valid_format) {
+            $status = "INVALID";
+        } elseif ($disposable) {
+            $status = "DISPOSABLE";
         } else {
-            $deliverable = false;
+            $status = "VALID";
         }
 
-        if  (!$valid_format) {
-            $email_domain = "invalid";
-            $email_user = "invalid";
-        }
-
-        $verify = ["email"=>$email, "deliverable"=>$deliverable, "valid_format"=>$valid_format, "disposable"=>$disposable, "role"=>$role, "free"=>$free, "server_status"=>$server_status, "email_domain"=>$email_domain, "email_user"=>$email_user];
+        $verify = ["status"=>$status, "valid_format"=>$valid_format, "disposable"=>$disposable, "role"=>$role, "server_status"=>$server_status, "free"=>$free];
 
         return view("verifier", ['verify' => $verify, 'email' => $email]);
     }

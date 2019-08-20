@@ -45,9 +45,9 @@
                         &nbsp;&nbsp;&nbsp;&nbsp;"email": "support@devrolabs.com",<br>
                         &nbsp;&nbsp;&nbsp;&nbsp;"deliverable": true,<br>
                         &nbsp;&nbsp;&nbsp;&nbsp;"valid-format": true,<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;"is-disposable": false,<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;"is-role": true,<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;"is-freemail": true,<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"disposable": false,<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"role-base": true,<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"free-mail": false,<br>
                         &nbsp;&nbsp;&nbsp;&nbsp;"server-status": true,<br>
                         &nbsp;&nbsp;&nbsp;&nbsp;"email-domain": "devrolabs.com",<br>
                         &nbsp;&nbsp;&nbsp;&nbsp;"email-user": "support"<br>

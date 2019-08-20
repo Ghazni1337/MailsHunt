@@ -65,9 +65,9 @@ class APIController extends Controller
             'email' => $email,
             'deliverable' => $deliverable,
             'valid-format' => $valid_format,
-            'is-disposable' => $disposable,
-            'is-role' => $role,
-            'is-freemail' => $free,
+            'disposable' => $disposable,
+            'role-base' => $role,
+            'free-mail' => $free,
             'server-status' => $server_status,
             'email-domain' => $email_domain,
             'email-user' => $email_user

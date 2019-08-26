@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail;
 use Illuminate\Http\Request;
 
 class APIController extends Controller
@@ -74,5 +75,13 @@ class APIController extends Controller
         ];
 
         return json_encode($obj, JSON_UNESCAPED_SLASHES);
+    }
+
+    public function saveExtractor(Request $request) {
+        foreach ($request->emails as $email) {
+            Mail::firstOrCreate(['mail' => $email]);
+        }
+
+        return json_encode('{"success": true}');
     }
 }

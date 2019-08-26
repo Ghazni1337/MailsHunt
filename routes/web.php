@@ -61,3 +61,4 @@ Route::post('/email-finder', 'MailController@find');
 Route::post('/email-verifier', 'MailController@verify');
 Route::get('/email-verifier/{email}', 'MailController@verify');
 Route::get('/api/verifier-lookup/{email}', 'APIController@verifierLookup');
+Route::post('/api/extractor', 'APIController@saveExtractor');

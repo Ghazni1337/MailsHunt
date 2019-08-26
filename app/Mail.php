@@ -6,5 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Mail extends Model
 {
-    //
+    protected $fillable = ['mail'];
+    public $timestamps = false;
 }

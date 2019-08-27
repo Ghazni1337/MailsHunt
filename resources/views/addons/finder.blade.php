@@ -33,7 +33,7 @@
                 <p class="des"><strong>Now Available On</strong></p>
                 <a target="_blank"
                    href="https://chrome.google.com/webstore/detail/maildump-finder/bngmobiiapgiphgfeiegibbmaoflfdoa"><img
-                            src="{{ asset('image/chrome.png') }}" alt="maildump"
+                            src="{{ asset('image/chrome.png') }}" alt="email-finder-chrome"
                             class="rounded img-fluid mx-auto d-block"/></a>
             </div>
         </div>

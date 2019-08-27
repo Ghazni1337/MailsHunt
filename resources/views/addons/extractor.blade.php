@@ -37,12 +37,12 @@
                     <div class="col-md-6">
                         <a target="_blank"
                            href="https://chrome.google.com/webstore/detail/mail-dump/npahnkjblgdfffkgogokpmeplpdoccib"><img
-                                    src="{{ asset('image/chrome.png') }}" alt="maildump"
+                                    src="{{ asset('image/chrome.png') }}" alt="email-extractor-chrome"
                                     class="rounded img-fluid mx-auto d-block"/></a>
                     </div>
                     <div class="col-md-6">
-                        <a target="_blank" href="https://addons.mozilla.org/en-US/firefox/addon/mail-dump/"><img
-                                    src="{{ asset('image/firefox.png') }}" alt="maildump"
+                        <a target="_blank" href="https://addons.mozilla.org/en-US/firefox/addon/mailshunt-email-extractor/"><img
+                                    src="{{ asset('image/firefox.png') }}" alt="email-extractor-firefox"
                                     class="rounded img-fluid mx-auto d-block"/></a>
                     </div>
                 </div>

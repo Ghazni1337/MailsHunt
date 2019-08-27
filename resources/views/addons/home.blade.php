@@ -25,12 +25,12 @@
                     <div class="col-md-6">
                         <a target="_blank"
                            href="https://chrome.google.com/webstore/detail/mail-dump/npahnkjblgdfffkgogokpmeplpdoccib"><img
-                                    src="{{ asset('image/chrome.png') }}" alt="maildump"
+                                    src="{{ asset('image/chrome.png') }}" alt="email-extractor-chrome"
                                     class="rounded img-fluid mx-auto d-block"/></a>
                     </div>
                     <div class="col-md-6">
-                        <a target="_blank" href="https://addons.mozilla.org/en-US/firefox/addon/mail-dump/"><img
-                                    src="{{ asset('image/firefox.png') }}" alt="maildump"
+                        <a target="_blank" href="https://addons.mozilla.org/en-US/firefox/addon/mailshunt-email-extractor/"><img
+                                    src="{{ asset('image/firefox.png') }}" alt="email-extractor-firefox"
                                     class="rounded img-fluid mx-auto d-block"/></a>
                     </div>
                 </div>
@@ -58,12 +58,12 @@
                     <div class="col-md-6">
                         <a target="_blank"
                            href="https://chrome.google.com/webstore/detail/maildump-verifier/hoflghcpbmgflojkghjopgodbhlpaeah"><img
-                                    src="{{ asset('image/chrome.png') }}" alt="maildump"
+                                    src="{{ asset('image/chrome.png') }}" alt="email-verifier-email-verifier-firefox"
                                     class="rounded img-fluid mx-auto d-block"/></a>
                     </div>
                     <div class="col-md-6">
-                        <a target="_blank" href="https://addons.mozilla.org/en-US/firefox/addon/maildump-verifier/"><img
-                                    src="{{ asset('image/firefox.png') }}" alt="maildump"
+                        <a target="_blank" href="https://addons.mozilla.org/en-US/firefox/addon/mailshunt-email-verifier/"><img
+                                    src="{{ asset('image/firefox.png') }}" alt="email-verifier-firefox"
                                     class="rounded img-fluid mx-auto d-block"/></a>
                     </div>
                 </div>
@@ -91,7 +91,7 @@
                 <p class="des"><strong>Now Available On</strong></p>
                 <a target="_blank"
                    href="https://chrome.google.com/webstore/detail/maildump-finder/bngmobiiapgiphgfeiegibbmaoflfdoa"><img
-                            src="{{ asset('image/chrome.png') }}" alt="maildump"
+                            src="{{ asset('image/chrome.png') }}" alt="email-finder-chrome"
                             class="rounded img-fluid mx-auto d-block"/></a>
             </div>
         </div>

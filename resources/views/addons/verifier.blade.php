@@ -45,12 +45,12 @@
                     <div class="col-md-6">
                         <a target="_blank"
                            href="https://chrome.google.com/webstore/detail/maildump-verifier/hoflghcpbmgflojkghjopgodbhlpaeah"><img
-                                    src="{{ asset('image/chrome.png') }}" alt="maildump"
+                                    src="{{ asset('image/chrome.png') }}" alt="email-verifier-chrome"
                                     class="rounded img-fluid mx-auto d-block"/></a>
                     </div>
                     <div class="col-md-6">
-                        <a target="_blank" href="https://addons.mozilla.org/en-US/firefox/addon/maildump-verifier/"><img
-                                    src="{{ asset('image/firefox.png') }}" alt="maildump"
+                        <a target="_blank" href="https://addons.mozilla.org/en-US/firefox/addon/mailshunt-email-verifier/"><img
+                                    src="{{ asset('image/firefox.png') }}" alt="email-verifier-firefox"
                                     class="rounded img-fluid mx-auto d-block"/></a>
                     </div>
                 </div>

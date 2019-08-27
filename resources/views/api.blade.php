@@ -55,6 +55,53 @@
                 </div>
             </div>
         </div>
+
+        <div class="container api">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h3>Bulk API Usage</h3>
+                    <p>Using the email verifier bulk API endpoint you can verify unlimited email addresses at one. All you have to do is perform a POST request on the main lookup endpoint using the following schema.</p>
+                    <p class="code">
+                        curl -X POST https://mailshunt.com/api/verifier-lookup \<br>
+                        -H "Content-Type: application/json" \<br>
+                        -d '{<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"emails": [<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"support@devrolabs.com",<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"support@mailshunt.com"<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;]<br>
+                        }'
+                    </p>
+                    <p>sample API response</p>
+                    <p class="code">
+                        { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"emails": [{ <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"success": true, <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"email": "support@devrolabs.com", <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"deliverable": true, <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"valid-format": true, <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"disposable": false, <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"role-base": true, <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"free-mail": false, <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"server-status": true, <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"email-domain": "devrolabs.com", <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"email-user": "support" <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;}, { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"success": true, <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"email": "support@mailshunt.com", <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"deliverable": true, <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"valid-format": true, <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"disposable": false, <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"role-base": true, <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"free-mail": false, <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"server-status": true, <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"email-domain": "mailshunt.com", <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"email-user": "support" <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;}] <br>
+                        } <br>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 @stop
 

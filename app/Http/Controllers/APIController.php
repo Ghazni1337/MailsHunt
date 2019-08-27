@@ -10,6 +10,36 @@ class APIController extends Controller
     public function verifierLookup(Request $request, $mail) {
         $email = $mail;
 
+        return json_encode($this->verfier($email), JSON_UNESCAPED_SLASHES);
+    }
+
+    public function verifierBulk(Request $request) {
+        if ($request->getContent() && isset(json_decode($request->getContent(), true)["emails"])) {
+            $emails = json_decode($request->getContent(), true)["emails"];
+            $bulk = [];
+            foreach ($emails as $email) {
+                array_push($bulk, $this->verfier($email));
+            }
+
+            $obj = (object) [
+                'emails' => $bulk,
+            ];
+
+            return json_encode($obj, JSON_UNESCAPED_SLASHES);
+        } else {
+            return json_encode('{"success": false, "message": "no email address found!"}', JSON_UNESCAPED_SLASHES);
+        }
+    }
+
+    public function saveExtractor(Request $request) {
+        foreach ($request->emails as $email) {
+            Mail::firstOrCreate(['mail' => $email]);
+        }
+
+        return json_encode('{"success": true}');
+    }
+
+    function verfier($email) {
         $sanitized = filter_var($email, FILTER_SANITIZE_EMAIL);
         if (!filter_var($sanitized, FILTER_VALIDATE_EMAIL)) {
             $valid_format = false;
@@ -74,14 +104,6 @@ class APIController extends Controller
             'email-user' => $email_user
         ];
 
-        return json_encode($obj, JSON_UNESCAPED_SLASHES);
-    }
-
-    public function saveExtractor(Request $request) {
-        foreach ($request->emails as $email) {
-            Mail::firstOrCreate(['mail' => $email]);
-        }
-
-        return json_encode('{"success": true}');
+        return $obj;
     }
 }

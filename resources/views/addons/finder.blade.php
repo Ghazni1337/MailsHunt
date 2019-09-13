@@ -4,6 +4,10 @@
     <title>Email Finder Extension</title>
 @stop
 
+@section('description')
+    <meta name="description" content="Email Finder is a Chrome Extension to discover business email addresses for any Domain Name or any Company."/>
+@stop
+
 @section('css')
     <style>
 

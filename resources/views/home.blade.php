@@ -1,5 +1,15 @@
 @extends('layouts.app')
 
+@if (Illuminate\Support\Facades\Request::route()->getName() == 'domain-search')
+    @section('title')
+        <title>Domain Search</title>
+    @stop
+
+    @section('description')
+        <meta name="description" content="The Domain Search lists all the email addresses of people who are working in a particular company."/>
+    @stop
+@endif
+
 @section('css')
     <style>
         .error-msg {
@@ -65,7 +75,7 @@
                 <mark>DOMAIN SEARCH</mark>
                 <h4>Get the email addresses behind any
                     website.</h4>
-                <p style="font-size: 16px">The Domain Search lists all the people working in a company with their email address found on the web. Use powerful algorithms to filter relevant email addresses from more than 20 millions of email addresses. It's the most powerful email-finding tool you ever found.</p>
+                <p style="font-size: 16px">The Domain Search lists all the email addresses of people who are working in a particular company. Use powerful algorithms to filter relevant email addresses from more than 20 millions of email addresses. It's the most powerful email-finding tool you ever found.</p>
             </div>
         </div>
     </div>

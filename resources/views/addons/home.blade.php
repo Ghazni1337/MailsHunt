@@ -1,5 +1,13 @@
 @extends('layouts.app')
 
+@section('title')
+    <title>Email Add-ons</title>
+@stop
+
+@section('description')
+    <meta name="description" content="MailsHunt email add-ons are browser-based extensions which allow users to extract, find and verify email addresses while surfing the web."/>
+@stop
+
 @section('css')
     <style>
 

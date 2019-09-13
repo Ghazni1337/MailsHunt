@@ -4,6 +4,10 @@
     <title>Email Verifier Extension</title>
 @stop
 
+@section('description')
+    <meta name="description" content="Email Verifier, a powerful tool that helps verify an email address or validate email addresses in bulk as you go, whilst you browse websites."/>
+@stop
+
 @section('css')
     <style>
 

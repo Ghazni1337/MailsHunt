@@ -4,6 +4,10 @@
     <title>Support MailsHunt</title>
 @stop
 
+@section('description')
+    <meta name="description" content="Feel free to reach out to us by sending an email or by filling out the support form. You will receive an instant response from a member of our team."/>
+@stop
+
 @section('css')
     <style>
         .container p {

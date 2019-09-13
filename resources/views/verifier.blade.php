@@ -1,5 +1,13 @@
 @extends('layouts.app')
 
+@section('title')
+    <title>Email Verifier</title>
+@stop
+
+@section('description')
+    <meta name="description" content="The Email Verifier does a complete check of the email address to let you send your emails with complete confidence."/>
+@stop
+
 @section('css')
     <style>
         .error-msg {

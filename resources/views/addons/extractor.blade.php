@@ -4,6 +4,10 @@
     <title>Email Extractor Extension</title>
 @stop
 
+@section('description')
+    <meta name="description" content="Email Extractor is a Powerful Automated Email Addresses Extraction Tool for Chrome and Firefox. It uses powerful algorithms to extract email addresses from web pages."/>
+@stop
+
 @section('css')
     <style>
 

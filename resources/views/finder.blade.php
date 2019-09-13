@@ -1,5 +1,13 @@
 @extends('layouts.app')
 
+@section('title')
+    <title>Email Finder</title>
+@stop
+
+@section('description')
+    <meta name="description" content="Find the email addresses of people who matter to you or your business. The Email Finder uses a large number of data to find the most probable email address."/>
+@stop
+
 @section('css')
     <style>
         .error-msg {

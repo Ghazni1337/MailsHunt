@@ -1,7 +1,11 @@
 @extends('layouts.app')
 
 @section('title')
-    <title>FAQ AltMails</title>
+    <title>FAQ MailsHunt</title>
+@stop
+
+@section('description')
+    <meta name="description" content="These are some of the most common questions and answers about MailsHunt, if you couldn't find your question in the list below, please submit support form."/>
 @stop
 
 @section('css')

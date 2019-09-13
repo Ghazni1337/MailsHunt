@@ -1,5 +1,13 @@
 @extends('layouts.app')
 
+@section('title')
+    <title>Email Verifier API</title>
+@stop
+
+@section('description')
+    <meta name="description" content="Prevent bounced emails and low-quality users with FREE professional-grade email verifier API"/>
+@stop
+
 @section('css')
     <style>
         .api {

@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Route::get('/domain-search', function () {
     return view('home');
-});
+})->name('domain-search');
 
 Route::get('/email-finder', function () {
     return view('finder');

@@ -4,7 +4,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta http-equiv="Content-Type" content="text/html" charset=utf-8">
-    <meta name="description" content="MailsHunt is the leading solution to find and verify professional email addresses. Start using MailsHunt and connect with the people that matter for your business." />
+    @section('description')
+        <meta name="description" content="MailsHunt is the leading solution to find and verify professional email addresses. Start using MailsHunt and connect with the people that matter for your business." />
+    @show
+
     <meta name="keywords" content="maildump, mail dump, mail-dump, maildump verifier, maildump-verifier, maildump finder, maildump-finder, extract email addresses, collect email addresses, validate email addresses, find emails, email leads, email marketing, hunter.io, emailhunter, anymailfinder, FindAnyEmail, devro labs, devrolabs" />
     <meta name="news_keywords" content="maildump, mail dump, mail-dump, maildump verifier, maildump-verifier, maildump finder, maildump-finder, extract email addresses, collect email addresses, validate email addresses, find emails, email leads, email marketing, hunter.io, emailhunter, anymailfinder, FindAnyEmail, devro labs, devrolabs" />
     <meta name="application-name" content="MailsHunt"/>

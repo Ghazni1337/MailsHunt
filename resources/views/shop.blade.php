@@ -4,6 +4,10 @@
     <title>Shop MailsHunt</title>
 @stop
 
+@section('description')
+    <meta name="description" content="MailsHunt offers the freshest most result-driven email lists available. We pride ourselves in customer service and continued ongoing customer support."/>
+@stop
+
 @section('css')
     <style>
         .container p {

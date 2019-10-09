@@ -45,7 +45,7 @@ Route::get('/support', function () {
 Route::get('/addons', function () {
     return view('addons.home');
 });
-Route::get('/addons/domain-extractor', function () {
+Route::get('/addons/email-extractor', function () {
     return view('addons.extractor');
 });
 Route::get('/addons/email-finder', function () {

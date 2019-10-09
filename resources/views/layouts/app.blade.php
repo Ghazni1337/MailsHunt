@@ -235,7 +235,7 @@
                 </div>
                 <div class="col-md-3" style="padding-bottom: 20px">
                     <p style="padding-bottom: 10px; letter-spacing: 2px"><strong>ADD-ONS</strong></p>
-                    <p><a href="/addons/domain-extractor">Email Extractor</a></p>
+                    <p><a href="/addons/email-extractor">Email Extractor</a></p>
                     <p><a href="/addons/email-finder">Email Finder</a></p>
                     <p><a href="/addons/email-verifier">Email Verifier</a></p>
                 </div>

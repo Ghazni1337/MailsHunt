@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('title')
-    <title>Email Verifier</title>
+    <title>Email Verifier - Verify any email address</title>
 @stop
 
 @section('description')
-    <meta name="description" content="The Email Verifier does a complete check of the email address to let you send your emails with complete confidence."/>
+    <meta name="description" content="The most complete email checker. The Email Verifier does a complete check of the email address to let you send your emails with complete confidence. Never get bounces anymore."/>
 @stop
 
 @section('css')

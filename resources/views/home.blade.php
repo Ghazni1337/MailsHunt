@@ -1,25 +1,9 @@
 @extends('layouts.app')
 
-@if (Illuminate\Support\Facades\Request::route()->getName() == 'domain-search')
-    @section('title')
-        <title>Domain Search</title>
-    @stop
-
-    @section('description')
-        <meta name="description" content="The Domain Search lists all the email addresses of people who are working in a particular company."/>
-    @stop
-@endif
-
 @section('css')
     <style>
-        .error-msg {
-            color: #FA7C72;
-            border-radius: 1rem;
-            border: 1px solid #FA7C72;
-            font-size: 18px;
-            padding: 5px 10px;
-        }
         .btn-primary {
+            font-family: 'Alegreya', serif;
              background-color: #7e57c2;
              border-color: #7e57c2;
         }
@@ -27,35 +11,61 @@
              background-color: #7e57c2;
              border-color: #7e57c2;
         }
+        .info {
+            font-family: 'Alegreya', serif;
+            padding-top: 50px;
+        }
+        .extra {
+            padding-top: 40px !important;
+            padding-bottom: 30px;
+        }
+        .extra p {
+            font-size: 16px;
+            text-align: justify;
+        }
+        .desc {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        .extra a {
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 17px;
+            text-align: left !important;
+        }
+        .seo {
+            font-family: 'Alegreya', serif;
+            margin-bottom: -50px;
+            padding: 40px 10px 0 10px;
+        }
+        .seo h1 {
+            text-align: center;
+            font-size: 20px;
+        }
+        .seo p {
+            font-size: 16px;
+            text-align: justify;
+            margin-top: 20px;
+        }
     </style>
 @stop
 
 @section('content')
     <div class="container">
+        <div class="col-md-8 offset-md-2 text-center info">
+            <h1>Find anyone's email address</h1>
+            <h4>MailsHunt helps you to find anyone's email address and connect with the people that matter for your business.</h4>
+        </div>
         <div class="row">
             <div class="col-md-8 offset-md-2" style="margin-top: 50px;">
                 <div class="jumbotron">
-                    <div class="errors">
-                        @if ($errors->any())
-                            <div style="text-align: center; line-height: 40px;">
-                                @foreach ($errors->all() as $error)
-                                    <p class="text-center error-msg"><i class="fa fa-exclamation-circle"
-                                                                        aria-hidden="true"></i> {{$error}}</p>
-                                @endforeach
-                            </div>
-                        @endif
-                    </div>
-                    <h4 style="margin-bottom: 20px">Domain Search</h4>
                     <form id="target" action="/domain-search" method="POST">
                         @csrf
                         <div class="form-group">
                             <div class="input-group input-group-lg">
-                                <input type="text" name="domain" class="form-control form-control-lg"
-                                       placeholder="company.com"
-                                       value="{{ isset($domain) ? $domain : old('domain') }}" required>
+                                <input type="text" name="domain" class="form-control form-control-lg" placeholder="company.com" required>
                                 <div class="input-group-append">
-                                    <button type="submit" class="btn btn-defalt btn-block btn-lg"><strong><i
-                                                    class="fas fa-search"></i></strong></button>
+                                    <button type="submit" class="btn btn-primary btn-block btn-lg">Find email addresses</button>
                                 </div>
                             </div>
                         </div>
@@ -66,10 +76,7 @@
         </div>
     </div>
 
-
-
-    @if(!isset($mails))
-    <div class="container desc">
+    <div class="container desc upper">
         <div class="row">
             <div class="col-md-8 offset-md-2 text-center">
                 <mark>DOMAIN SEARCH</mark>
@@ -79,91 +86,39 @@
             </div>
         </div>
     </div>
-    @endif
 
-
-    @if(isset($mails))
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 offset-md-2">
-                <div style="margin-bottom: 10px; text-align: right">
-                    <button class="btn btn-sm btn-primary" onclick="copyAll({{$mails}})" type="button">Copy All</button>
-                    <button class="btn btn-sm btn-primary" onclick="download({{$mails}})" type="button">Download CSV</button>
+    <div class="extra" style="background-color: #e1e1e1;">
+        <div class="container desc">
+            <div class="row text-center">
+                <div class="col-md-6">
+                    <mark>EMAIL FINDER</mark>
+                    <h4>Easily find verified email addresses by name and domain</h4>
+                    <p>The Email Finder allows you to find anyone's email address given the company domain and name of your target lead. Hours of contact research are shrunk to milliseconds. We harvest and process millions of public data daily to offer a fast and reliable Email Finder for any business or market.</p>
+                    <a href="/email-finder">→ Use Email Finder</a>
                 </div>
-                <ul class="list-group">
-                    @foreach($mails as $mail)
-                        <li class="list-group-item">{{$mail->mail}}
-                            <span style="float: right">
-                                <i title="copy" id="copy" onclick="copyMail(this)" class="fas fa-copy"></i>
-                                <a title="verify" target="_blank" href="email-verifier/{{$mail->mail}}">
-                                    <i class="fas fa-user-check"></i>
-                                </a>
-                                <a title="mailto" href="mailto:{{$mail->mail}}">
-                                    <i class="fa fa-envelope" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                        </li>
-                    @endforeach
-                </ul>
-                @if(count($mails) === 25)
-                    <a style="width: 100%; text-align: center; margin-top: 40px" href="/shop" class="btn btn-primary">All search queries limited to 25 results. Get more from the Shop!</a>
-                @endif
+                <div class="col-md-6">
+                    <mark>EMAIL VERIFIER</mark>
+                    <h4>Validate email addresses in real-time to reach real people</h4>
+                    <p>When emails are sent to invalid email addresses, they bounce. The more you bounce, your sender score will drop. You'll be trapped by spam filters and eventually blacklisted. MailsHunt makes sure every email you send, reaches a real person. This will increase your deliverability, open rate and revenue.</p>
+                    <a href="/email-verifier">→ Use Email Verifier</a>
+                </div>
             </div>
         </div>
     </div>
-    @endif
 
-@stop
-
-@section('js')
-
-    <script>
-        var $body = document.getElementsByTagName('body')[0];
-
-        function copyMail(elem) {
-            var copyText = $(elem).closest("li").text().trim();
-
-            var $tempInput = document.createElement('INPUT');
-            $body.appendChild($tempInput);
-            $tempInput.setAttribute('value', copyText);
-
-            $tempInput.select();
-            document.execCommand("copy");
-
-            $body.removeChild($tempInput);
-        }
-
-        function download(mails) {
-            var csvFile = '';
-            for (var i = 0; i < mails.length; i++) {
-                csvFile += mails[i]['mail'] + "\r\n";
-            }
-            var blob = new Blob([csvFile], {type: "text/csv"});
-            var url = URL.createObjectURL(blob);
-
-            var link = document.createElement("a");
-            link.setAttribute("href", url);
-            link.setAttribute("download", 'mailshunt.csv');
-            link.style.visibility = 'hidden';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
-
-        function copyAll(mails) {
-            var copy = '';
-            for (var i = 0; i < mails.length; i++) {
-                copy += mails[i]['mail'] + ", ";
-            }
-
-            var $tempInput = document.createElement('INPUT');
-            $body.appendChild($tempInput);
-            $tempInput.setAttribute('value', copy);
-
-            $tempInput.select();
-            document.execCommand("copy");
-
-            $body.removeChild($tempInput);
-        }
-    </script>
+    <div class="container seo">
+        <h1>What is the free email finding tool?</h1>
+        <p>
+            Finding an email address is often the last piece of the puzzle. Often you know exactly who you want to reach
+            out to but you're lacking contact information. An email address is literally worth it's weight in gold. Some
+            prospects have their email publicly listed on one of their online profiles - they're easy. You need to do a
+            little extra sleuthing to find email addresses for everyone else. To make that detective much easier, you
+            can use MailsHunt email finding tools. It is also known by names like email finder tool free, find emails by
+            name free, lead finders, free lead finder, lead finder software, email tracker, lead find pro, email
+            hunting, find emails, look for emails, hunter emails, find email address by domain, find emails from domain,
+            hunter, snovio, findanyone, email finder free, norbert, email generation, email hunter, email address
+            finder, hunt email, emails hunter, people emails, lead email finder, e mail hunter, emails of businesses,
+            email of company, free emails search.
+        </p>
+    </div>
 @stop

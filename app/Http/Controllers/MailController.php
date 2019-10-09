@@ -28,7 +28,7 @@ class MailController extends Controller
         $stats->results = count($mails);
         $stats->save();
 
-        return view("home", ['mails' => $mails, 'domain' => $domain]);
+        return view("search", ['mails' => $mails, 'domain' => $domain]);
     }
 
     public function find(Request $request)

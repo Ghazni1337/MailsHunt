@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('title')
-    <title>Email Finder - Find an email address by name</title>
+    <title>Domain Search - Find email addresses from a domain name</title>
 @stop
 
 @section('description')
-    <meta name="description" content="The most accurate and complete email-finding tool. Type the name and the website to find anyone's email address."/>
+    <meta name="description" content="The most powerful email-finding tool. The Domain Search lists all the email addresses of people who are working in a particular company."/>
 @stop
 
 @section('css')
@@ -18,12 +18,12 @@
             padding: 5px 10px;
         }
         .btn-primary {
-            background-color: #7e57c2;
-            border-color: #7e57c2;
+             background-color: #7e57c2;
+             border-color: #7e57c2;
         }
         .btn-primary:hover {
-            background-color: #7e57c2;
-            border-color: #7e57c2;
+             background-color: #7e57c2;
+             border-color: #7e57c2;
         }
     </style>
 @stop
@@ -31,7 +31,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 offset-lg-2" style="margin-top: 50px;">
+            <div class="col-md-8 offset-md-2" style="margin-top: 50px;">
                 <div class="jumbotron">
                     <div class="errors">
                         @if ($errors->any())
@@ -43,20 +43,14 @@
                             </div>
                         @endif
                     </div>
-                    <h4 style="margin-bottom: 20px">Email Finder</h4>
-                    <form id="target" action="/email-finder" method="POST">
+                    <h4 style="margin-bottom: 20px">Domain Search</h4>
+                    <form id="target" action="/domain-search" method="POST">
                         @csrf
                         <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <input type="text" name="name" class="form-control form-control-lg"
-                                           placeholder="Jon Snow"
-                                           value="{{ isset($name) ? $name : old('name') }}" id="inlineFormInputGroup" required>
-                                    <div class="input-group-text"><strong><i class="fas fa-at"></i></strong></div>
-                                </div>
+                            <div class="input-group input-group-lg">
                                 <input type="text" name="domain" class="form-control form-control-lg"
                                        placeholder="company.com"
-                                       value="{{ isset($domain) ? $domain : old('domain') }}" id="inlineFormInputGroup" required>
+                                       value="{{ isset($domain) ? $domain : old('domain') }}" required>
                                 <div class="input-group-append">
                                     <button type="submit" class="btn btn-defalt btn-block btn-lg"><strong><i
                                                     class="fas fa-search"></i></strong></button>
@@ -64,24 +58,27 @@
                             </div>
                         </div>
                     </form>
-                    <p>Enter a full name and the domain name of the email address (for example "devrolabs.com").</p>
+                    <p>Enter a domain name to find email addresses.</p>
                 </div>
             </div>
         </div>
     </div>
 
+
+
     @if(!isset($mails))
-        <div class="container desc">
-            <div class="row">
-                <div class="col-md-8 offset-md-2 text-center">
-                    <mark>EMAIL FINDER</mark>
-                    <h4>Find the email address of any
-                        professional.</h4>
-                    <p style="font-size: 16px">Find the email addresses of people who matter to you or your business. The Email Finder uses a large number of data to find the proven or most probable email address of anyone within a second.</p>
-                </div>
+    <div class="container desc">
+        <div class="row">
+            <div class="col-md-8 offset-md-2 text-center">
+                <mark>DOMAIN SEARCH</mark>
+                <h4>Get the email addresses behind any
+                    website.</h4>
+                <p style="font-size: 16px">The Domain Search lists all the email addresses of people who are working in a particular company. Use powerful algorithms to filter relevant email addresses from more than 20 millions of email addresses. It's the most powerful email-finding tool you ever found.</p>
             </div>
         </div>
+    </div>
     @endif
+
 
     @if(isset($mails))
     <div class="container">

@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('/domain-search', function () {
-    return view('home');
+    return view('search');
 })->name('domain-search');
 
 Route::get('/email-finder', function () {

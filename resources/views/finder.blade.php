@@ -50,7 +50,7 @@
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <input type="text" name="name" class="form-control form-control-lg"
-                                           placeholder="Jane Doe"
+                                           placeholder="Jon Snow"
                                            value="{{ isset($name) ? $name : old('name') }}" id="inlineFormInputGroup" required>
                                     <div class="input-group-text"><strong><i class="fas fa-at"></i></strong></div>
                                 </div>
@@ -96,7 +96,7 @@
                         <li class="list-group-item">{{$mail->mail}}
                             <span style="float: right">
                                 <i title="copy" id="copy" onclick="copyMail(this)" class="fas fa-copy"></i>
-                                <a title="verify" href="email-verifier/{{$mail->mail}}">
+                                <a title="verify" target="_blank" href="email-verifier/{{$mail->mail}}">
                                     <i class="fas fa-user-check"></i>
                                 </a>
                                 <a title="mailto" href="mailto:{{$mail->mail}}">

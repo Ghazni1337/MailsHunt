@@ -95,7 +95,7 @@
                         <li class="list-group-item">{{$mail->mail}}
                             <span style="float: right">
                                 <i title="copy" id="copy" onclick="copyMail(this)" class="fas fa-copy"></i>
-                                <a title="verify" href="email-verifier/{{$mail->mail}}">
+                                <a title="verify" target="_blank" href="email-verifier/{{$mail->mail}}">
                                     <i class="fas fa-user-check"></i>
                                 </a>
                                 <a title="mailto" href="mailto:{{$mail->mail}}">

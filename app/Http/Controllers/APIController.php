@@ -3,12 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Mail;
+use App\Stat;
 use Illuminate\Http\Request;
 
 class APIController extends Controller
 {
     public function verifierLookup(Request $request, $mail) {
         $email = $mail;
+
+        $stats = new Stat();
+        $stats->ip = request()->ip();
+        $stats->type = 3;
+        $stats->save();
 
         return json_encode($this->verfier($email), JSON_UNESCAPED_SLASHES);
     }
@@ -24,6 +30,12 @@ class APIController extends Controller
             $obj = (object) [
                 'emails' => $bulk,
             ];
+
+            $stats = new Stat();
+            $stats->ip = request()->ip();
+            $stats->type = 4;
+            $stats->results = count($emails);
+            $stats->save();
 
             return json_encode($obj, JSON_UNESCAPED_SLASHES);
         } else {

@@ -76,7 +76,7 @@
                 <mark>DOMAIN SEARCH</mark>
                 <h4>Get the email addresses behind any
                     website.</h4>
-                <p style="font-size: 16px">The Domain Search lists all the email addresses of people who are working in a particular company. Use powerful algorithms to filter relevant email addresses from more than 20 millions of email addresses. It's the most powerful email-finding tool you ever found.</p>
+                <p style="font-size: 16px">The Domain Search is perfect to quickly find who to contact in business. It lists all the email addresses publicly available on the web. The Domain Search lists all the email addresses of people who are working in a particular company. Use powerful algorithms to filter relevant email addresses from more than 20 millions of email addresses. It's the most powerful email-finding tool you ever found.</p>
             </div>
         </div>
     </div>

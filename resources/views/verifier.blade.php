@@ -142,7 +142,7 @@
                 <div class="col-md-8 offset-md-2 text-center">
                     <mark>EMAIL VERIFIER</mark>
                     <h4>Verify the deliverability of any email address.</h4>
-                    <p style="font-size: 16px">The Email Verifier does a complete check of the email address to let you send your emails with a complete confidence. As it uses our unique set of data, the Email Verifier can return a result even where other standard verification tools fail.</p>
+                    <p style="font-size: 16px">The Email Verifier does a complete check of the email address to let you send your emails with a complete confidence. As it uses our unique set of data, the Email Verifier can return a result even where other standard verification tools fail. Our validation process has multiple treads: email format, domain information, server status, and email type.</p>
                 </div>
             </div>
         </div>

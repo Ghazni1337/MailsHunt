@@ -168,6 +168,12 @@
             cursor: pointer;
             color: #7e57c2;
         }
+
+        /*top info*/
+        .info {
+            font-family: 'Alegreya', serif;
+            padding-top: 50px;
+        }
     </style>
 
 

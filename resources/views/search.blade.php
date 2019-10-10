@@ -30,6 +30,10 @@
 
 @section('content')
     <div class="container">
+        <div class="col-md-8 offset-md-2 text-center info">
+            <h1><img src="{{ asset('image/search.png') }}" height="50px" alt="Search MailsHunt"> Domain Search</h1>
+            <h4>The most powerful email-finding tool. The Domain Search lists all the email addresses of people who are working in a particular company.</h4>
+        </div>
         <div class="row">
             <div class="col-md-8 offset-md-2" style="margin-top: 50px;">
                 <div class="jumbotron">
@@ -52,8 +56,7 @@
                                        placeholder="company.com"
                                        value="{{ isset($domain) ? $domain : old('domain') }}" required>
                                 <div class="input-group-append">
-                                    <button type="submit" class="btn btn-defalt btn-block btn-lg"><strong><i
-                                                    class="fas fa-search"></i></strong></button>
+                                    <button id="submit" type="submit" class="btn btn-defalt btn-block btn-lg">Find email addresses</button>
                                 </div>
                             </div>
                         </div>
@@ -162,6 +165,10 @@
             document.execCommand("copy");
 
             $body.removeChild($tempInput);
+        }
+
+        if (screen.width <= 425) {
+            $("#submit").text("Search");
         }
     </script>
 @stop

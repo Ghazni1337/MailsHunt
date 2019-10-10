@@ -30,6 +30,10 @@
 
 @section('content')
     <div class="container">
+        <div class="col-md-8 offset-md-2 text-center info">
+            <h1><img src="{{ asset('image/find.png') }}" height="50px" alt="Search MailsHunt"> Email Finder</h1>
+            <h4>The most accurate and complete email-finding tool. Type the name and the website to find anyone's email address.</h4>
+        </div>
         <div class="row">
             <div class="col-lg-8 offset-lg-2" style="margin-top: 50px;">
                 <div class="jumbotron">

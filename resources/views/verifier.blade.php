@@ -38,6 +38,10 @@
 
 @section('content')
     <div class="container">
+        <div class="col-md-8 offset-md-2 text-center info">
+            <h1><img src="{{ asset('image/approval.png') }}" height="50px" alt="Search MailsHunt"> Email Verifier</h1>
+            <h4>The Email Verifier does a complete check of the email address to let you send your emails with complete confidence.</h4>
+        </div>
         <div class="row">
             <div class="col-md-8 offset-md-2" style="margin-top: 50px;">
                 <div class="jumbotron">

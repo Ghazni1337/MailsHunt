@@ -11,10 +11,6 @@
              background-color: #7e57c2;
              border-color: #7e57c2;
         }
-        .info {
-            font-family: 'Alegreya', serif;
-            padding-top: 50px;
-        }
         .extra {
             padding-top: 40px !important;
         }

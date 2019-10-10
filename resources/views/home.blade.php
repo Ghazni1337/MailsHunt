@@ -17,7 +17,9 @@
         }
         .extra {
             padding-top: 40px !important;
-            padding-bottom: 30px;
+        }
+        .extra .col-md-6 {
+            padding-bottom: 50px;
         }
         .extra p {
             font-size: 16px;
@@ -36,7 +38,6 @@
         .seo {
             font-family: 'Alegreya', serif;
             margin-bottom: -50px;
-            padding: 40px 10px 0 10px;
         }
         .seo h1 {
             text-align: center;
@@ -65,7 +66,7 @@
                             <div class="input-group input-group-lg">
                                 <input type="text" name="domain" class="form-control form-control-lg" placeholder="company.com" required>
                                 <div class="input-group-append">
-                                    <button type="submit" class="btn btn-primary btn-block btn-lg">Find email addresses</button>
+                                    <button id="submit" type="submit" class="btn btn-primary btn-block btn-lg">Find email addresses</button>
                                 </div>
                             </div>
                         </div>
@@ -121,4 +122,12 @@
             email of company, free emails search.
         </p>
     </div>
+@stop
+
+@section('js')
+    <script>
+        if (screen.width <= 425) {
+            $("#submit").text("Search");
+        }
+    </script>
 @stop

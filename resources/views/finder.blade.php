@@ -48,10 +48,10 @@
                         @csrf
                         <div class="form-group">
                             <div class="input-group">
+                                <input type="text" name="name" class="form-control form-control-lg"
+                                       placeholder="Jon Snow"
+                                       value="{{ isset($name) ? $name : old('name') }}" id="inlineFormInputGroup" required>
                                 <div class="input-group-prepend">
-                                    <input type="text" name="name" class="form-control form-control-lg"
-                                           placeholder="Jon Snow"
-                                           value="{{ isset($name) ? $name : old('name') }}" id="inlineFormInputGroup" required>
                                     <div class="input-group-text"><strong><i class="fas fa-at"></i></strong></div>
                                 </div>
                                 <input type="text" name="domain" class="form-control form-control-lg"

@@ -141,6 +141,7 @@ class VerifierController extends Controller
         } catch (\Exception $e) {
             return 2;
         }
+        return 3;
     }
 
     private static function get_banned_domains() {

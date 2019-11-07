@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 class VerifierController extends Controller
 {
 
-    public static function lookup($email) {
+    public static function lookup($email, $version = 1) {
         $sanitized = filter_var($email, FILTER_SANITIZE_EMAIL);
         if (!filter_var($sanitized, FILTER_VALIDATE_EMAIL)) {
             $valid_format = false;
@@ -36,6 +36,18 @@ class VerifierController extends Controller
             $free = true;
         } else {
             $free = false;
+        }
+
+        // version 2.0
+        if ($version === 2) {
+            // check DNS for MX records
+            if ((bool) checkdnsrr($email_domain, 'MX') === FALSE) {
+                $server_status = false;
+            } else {
+                $server_status = true;
+            }
+
+            return ["valid_format" => $valid_format, "email_type" => $role, "email_status" => self::serverStatus($email, $email_domain), "server_status" => $server_status, "webmail" => $free, "disposable" => $disposable];
         }
 
         // 5 - check DNS for MX records

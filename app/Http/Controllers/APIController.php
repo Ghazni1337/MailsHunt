@@ -14,6 +14,7 @@ class APIController extends Controller
         $stats = new Stat();
         $stats->ip = request()->ip();
         $stats->type = 3;
+        $stats->query = $email;
         $stats->save();
 
         return json_encode(VerifierController::lookup($email), JSON_UNESCAPED_SLASHES);

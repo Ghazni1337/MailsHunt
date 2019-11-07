@@ -17,16 +17,16 @@ class MailController extends Controller
 
         $mails = Mail::select('mail')->where('mail', 'like', '%@' . $domain)->whereRaw("'mail' NOT REGEXP '^[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$'")->limit(25)->get();
 
-        if ($mails->isEmpty()) {
-            return \redirect('/domain-search')->withErrors("No email addresses found.")->withInput();
-        }
-
         $stats = new Stat();
         $stats->ip = request()->ip();
         $stats->type = 0;
         $stats->query = $domain;
-        $stats->results = count($mails);
+        $stats->results = $mails->isEmpty() ? 0 : count($mails);
         $stats->save();
+
+        if ($mails->isEmpty()) {
+            return \redirect('/domain-search')->withErrors("No email addresses found.")->withInput();
+        }
 
         return view("search", ['mails' => $mails, 'domain' => $domain]);
     }
@@ -50,16 +50,16 @@ class MailController extends Controller
 
         $mails = Mail::select('mail')->where('mail', 'like', $query . '@' . $domain)->whereRaw("'mail' NOT REGEXP '^[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$'")->limit(25)->get();
 
-        if ($mails->isEmpty()) {
-            return \redirect('/email-finder')->withErrors("No email addresses found.")->withInput();
-        }
-
         $stats = new Stat();
         $stats->ip = request()->ip();
         $stats->type = 1;
         $stats->query = $request->name . "@" . $domain;
-        $stats->results = count($mails);
+        $stats->results = $mails->isEmpty() ? 0 : count($mails);
         $stats->save();
+
+        if ($mails->isEmpty()) {
+            return \redirect('/email-finder')->withErrors("No email addresses found.")->withInput();
+        }
 
         return view("finder", ['mails' => $mails, 'domain' => $domain, 'name' => $request->name]);
     }
@@ -90,6 +90,7 @@ class MailController extends Controller
         $stats = new Stat();
         $stats->ip = request()->ip();
         $stats->type = 2;
+        $stats->query = $email;
         $stats->save();
 
         return view("verifier", ['verify' => $verify, 'email' => $email]);

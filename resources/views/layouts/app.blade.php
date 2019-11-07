@@ -67,7 +67,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Alegreya&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @section('css')
@@ -84,10 +84,10 @@
             border-radius: 0;
         }
         .nav-link:hover {
-            color: #a459ea !important;
+            color: #555 !important;
         }
         .nav-link {
-            color: #7e57c2 !important;
+            color: #000 !important;
         }
         .navbar-nav {
             font-size: large;
@@ -110,6 +110,7 @@
         }
 
         .footer-basic-centered a {
+            font-family: open sans,sans-serif !important;
             text-decoration: none !important;
             color: #aeaeae;
         }
@@ -136,10 +137,20 @@
             padding: 5px 10px;
             text-transform: uppercase;
         }
+        .desc {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
         .desc h4 {
             padding: 20px 0;
             color: #103742;
             font-weight: bold;
+        }
+        .desc p {
+            font-family: open sans,sans-serif !important;
+            font-size: 17px;
+            text-align: justify;
+            color: #000000;
         }
 
         /*addons*/
@@ -172,8 +183,31 @@
 
         /*top info*/
         .info {
-            font-family: 'Alegreya', serif;
+            font-family: open sans,sans-serif !important;
             padding-top: 50px;
+        }
+        .info h4 {
+            color: #555555;
+            font-size: 18px;
+            padding-top: 15px;
+        }
+
+        /*mid layer extra*/
+        .extra {
+            padding-top: 40px !important;
+        }
+        .extra .col-md-6 {
+            padding-bottom: 50px;
+        }
+        .extra p {
+            font-size: 16px;
+            text-align: justify;
+        }
+        .extra a {
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 17px;
+            text-align: left !important;
         }
     </style>
 
@@ -193,13 +227,13 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/domain-search"><img src="{{ asset('image/search.png') }}" height="30px" alt="Search MailsHunt"> Search</a>
+                        <a class="nav-link" href="/domain-search"><img src="{{ asset('image/search.png') }}" height="30px" alt="Search MailsHunt"> Domain Search</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/email-finder"><img src="{{ asset('image/find.png') }}" height="30px" alt="Finder MailsHunt"> Finder</a>
+                        <a class="nav-link" href="/email-finder"><img src="{{ asset('image/find.png') }}" height="30px" alt="Finder MailsHunt"> Email Finder</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/email-verifier"><img src="{{ asset('image/approval.png') }}" height="30px" alt="Verifier MailsHunt"> Verifier</a>
+                        <a class="nav-link" href="/email-verifier"><img src="{{ asset('image/approval.png') }}" height="30px" alt="Verifier MailsHunt"> Email Verifier</a>
                     </li>
                 </ul>
 

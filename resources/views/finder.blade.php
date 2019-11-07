@@ -35,7 +35,7 @@
             <h4>The most accurate and complete email-finding tool. Type the name and the website to find anyone's email address.</h4>
         </div>
         <div class="row">
-            <div class="col-lg-8 offset-lg-2" style="margin-top: 50px;">
+            <div class="col-lg-8 offset-lg-2" style="margin-top: 40px;">
                 <div class="jumbotron">
                     <div class="errors">
                         @if ($errors->any())

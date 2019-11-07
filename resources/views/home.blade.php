@@ -3,7 +3,6 @@
 @section('css')
     <style>
         .btn-primary {
-            font-family: 'Alegreya', serif;
              background-color: #7e57c2;
              border-color: #7e57c2;
         }
@@ -11,28 +10,7 @@
              background-color: #7e57c2;
              border-color: #7e57c2;
         }
-        .extra {
-            padding-top: 40px !important;
-        }
-        .extra .col-md-6 {
-            padding-bottom: 50px;
-        }
-        .extra p {
-            font-size: 16px;
-            text-align: justify;
-        }
-        .desc {
-            margin-top: 30px;
-            margin-bottom: 30px;
-        }
-        .extra a {
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 17px;
-            text-align: left !important;
-        }
         .seo {
-            font-family: 'Alegreya', serif;
             margin-bottom: -50px;
         }
         .seo h1 {
@@ -54,7 +32,7 @@
             <h4>MailsHunt helps you to find anyone's email address and connect with the people that matter for your business.</h4>
         </div>
         <div class="row">
-            <div class="col-md-8 offset-md-2" style="margin-top: 50px;">
+            <div class="col-md-8 offset-md-2" style="margin-top: 40px;">
                 <div class="jumbotron">
                     <form id="target" action="/domain-search" method="POST">
                         @csrf
@@ -73,7 +51,7 @@
         </div>
     </div>
 
-    <div class="container desc upper">
+    <div class="container desc">
         <div class="row">
             <div class="col-md-8 offset-md-2 text-center">
                 <mark>DOMAIN SEARCH</mark>
@@ -95,7 +73,7 @@
                 </div>
                 <div class="col-md-6">
                     <mark>EMAIL VERIFIER</mark>
-                    <h4>Validate email addresses in real-time to reach real people</h4>
+                    <h4>Validate email ids in real-time to reach real people</h4>
                     <p>When emails are sent to invalid email addresses, they bounce. The more you bounce, your sender score will drop. You'll be trapped by spam filters and eventually blacklisted. MailsHunt makes sure every email you send, reaches a real person. This will increase your deliverability, open rate and revenue.</p>
                     <a href="/email-verifier">→ Use Email Verifier</a>
                 </div>

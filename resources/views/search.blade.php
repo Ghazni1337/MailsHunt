@@ -32,10 +32,10 @@
     <div class="container">
         <div class="col-md-8 offset-md-2 text-center info">
             <h1><img src="{{ asset('image/search.png') }}" height="50px" alt="Search MailsHunt"> Domain Search</h1>
-            <h4>The most powerful email-finding tool. The Domain Search lists all the email addresses of people who are working in a particular company.</h4>
+            <h4>The most powerful email-finding tool which is able to list all the email addresses of people who are working in a particular company.</h4>
         </div>
         <div class="row">
-            <div class="col-md-8 offset-md-2" style="margin-top: 50px;">
+            <div class="col-md-8 offset-md-2" style="margin-top: 40px;">
                 <div class="jumbotron">
                     <div class="errors">
                         @if ($errors->any())

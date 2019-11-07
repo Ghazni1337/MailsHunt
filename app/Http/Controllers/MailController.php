@@ -71,17 +71,21 @@ class MailController extends Controller
             $email = $request->email;
         }
 
-        $verifierObj = VerifierController::lookup($email);
+        $verifierArr = VerifierController::lookup($email, 2);
 
-        if (!$verifierObj->{'server-status'} || !$verifierObj->{'valid-format'}) {
+        if ($verifierArr["email_status"] === 3 || $verifierArr["valid_format"] === false || $verifierArr["server_status"] === false) {
             $status = "INVALID";
-        } elseif ($verifierObj->disposable) {
+        } elseif ($verifierArr["email_status"] === 1) {
+            $status = "CATCH-ALL";
+        } elseif ($verifierArr["email_status"] === 2) {
+            $status = "BLOCKED";
+        } elseif ($verifierArr["disposable"]) {
             $status = "DISPOSABLE";
         } else {
             $status = "VALID";
         }
 
-        $verify = ["status"=>$status, "valid_format"=>$verifierObj->{'valid-format'}, "disposable"=>$verifierObj->disposable, "role"=>$verifierObj->{'role-base'}, "server_status"=>$verifierObj->{'server-status'}, "free"=>$verifierObj->{'free-mail'}];
+        $verify = ["status"=> $status, "valid_format" => $verifierArr["valid_format"], "email_type" => $verifierArr["email_type"], "email_status" => $verifierArr["email_status"], "server_status" => $verifierArr["server_status"], "webmail" => $verifierArr["webmail"], "disposable" => $verifierArr["disposable"]];
 
         $stats = new Stat();
         $stats->ip = request()->ip();

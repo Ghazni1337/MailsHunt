@@ -34,34 +34,6 @@
             float: right;
         }
 
-        .faq {
-            padding-top: 60px;
-            font-family: open sans, sans-serif !important;
-        }
-
-        .faq h2 {
-            margin-bottom: 50px;
-            font-size: 28px;
-        }
-
-        .faq h3 {
-            margin-bottom: 15px;
-            font-size: 20px;
-            color: #000;
-        }
-
-        .faq p {
-            font-size: 16px;
-        }
-
-        .faq-reply {
-            padding-left: 25px;
-            margin-bottom: 30px;
-            line-height: 26px;
-            border-left: 3px solid #e6e6e6;
-            color: #555;
-        }
-
         .red {
             color: #000000;
         }

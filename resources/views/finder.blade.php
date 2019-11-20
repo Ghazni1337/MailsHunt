@@ -218,6 +218,10 @@
         function copyAll(mails) {
             var copy = '';
             for (var i = 0; i < mails.length; i++) {
+                if (i === mails.length - 1) {
+                    copy += mails[i]['mail'];
+                    break;
+                }
                 copy += mails[i]['mail'] + ", ";
             }
 

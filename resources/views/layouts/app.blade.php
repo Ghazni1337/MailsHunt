@@ -61,6 +61,7 @@
 
         gtag('config', 'UA-137606439-1');
     </script>
+    <script data-ad-client="ca-pub-1150347576598742" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
     <!-- Fonts -->

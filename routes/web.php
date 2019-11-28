@@ -56,9 +56,9 @@ Route::get('/addons/email-verifier', function () {
 });
 //end addons
 
-Route::post('/domain-search', 'MailController@search');
-Route::post('/email-finder', 'MailController@find');
-Route::post('/email-verifier', 'MailController@verify');
+Route::post('/domain-search', 'MailController@search')->middleware('request');
+Route::post('/email-finder', 'MailController@find')->middleware('request');
+Route::post('/email-verifier', 'MailController@verify')->middleware('request');
 Route::get('/email-verifier/{email}', 'MailController@verify');
 Route::get('/api/verifier-lookup/{email}', 'APIController@verifierLookup');
 Route::post('/api/verifier-lookup', 'APIController@verifierBulk');

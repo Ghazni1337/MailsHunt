@@ -61,7 +61,6 @@
 
         gtag('config', 'UA-137606439-1');
     </script>
-    <script data-ad-client="ca-pub-1150347576598742" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
     <!-- Fonts -->
@@ -167,19 +166,6 @@
         .addons p {
             font-size: 16px;
             text-align: left;
-        }
-
-        /*email list*/
-        .list-group-item i {
-            padding-left: 10px;
-        }
-        .list-group-item a {
-            text-decoration: none;
-            color: #7e57c2;
-        }
-        #copy {
-            cursor: pointer;
-            color: #7e57c2;
         }
 
         /*top info*/
@@ -299,7 +285,7 @@
                     <p><a href="/domain-search">Domain Search</a></p>
                     <p><a href="/email-finder">Email Finder</a></p>
                     <p><a href="/email-verifier">Email Verifier</a></p>
-                    <p><a href="/email-verifier-api">API</a></p>
+                    <p><a href="/email-verifier-api">Email Verifier API</a></p>
                 </div>
                 <div class="col-md-3" style="padding-bottom: 20px">
                     <p style="padding-bottom: 10px; letter-spacing: 2px"><strong>ADD-ONS</strong></p>

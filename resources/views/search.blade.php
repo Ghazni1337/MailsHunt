@@ -44,11 +44,15 @@
                         @csrf
                         <div class="form-group">
                             <div class="input-group input-group-lg">
+                                <div id="captcha">
+                                    {!! Anhskohbo\NoCaptcha\Facades\NoCaptcha::display(['data-callback' => 'submit']) !!}
+                                    {!! Anhskohbo\NoCaptcha\Facades\NoCaptcha::renderJs() !!}
+                                </div>
                                 <input type="text" name="domain" class="form-control form-control-lg"
                                        placeholder="company.com"
                                        value="{{ isset($domain) ? $domain : old('domain') }}" required>
                                 <div class="input-group-append">
-                                    <button id="submit" type="submit" class="btn btn-defalt btn-block btn-lg">Find email addresses</button>
+                                    <button type="submit" class="btn btn-defalt btn-block btn-lg">Find email addresses</button>
                                 </div>
                             </div>
                         </div>
@@ -154,7 +158,17 @@
 @section('js')
     <script>
         if (screen.width <= 425) {
-            $("#submit").text("Search");
+            $(":submit").text("Search");
         }
+
+        function submit() {
+            $("#target").unbind('submit').submit();
+        }
+
+        $('#target').on('submit', function (e) {
+            e.preventDefault();
+            $('.errors').hide();
+            $('#captcha').show();
+        });
     </script>
 @stop

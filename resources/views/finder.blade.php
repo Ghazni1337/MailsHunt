@@ -44,6 +44,10 @@
                         @csrf
                         <div class="form-group">
                             <div class="input-group">
+                                <div id="captcha">
+                                    {!! Anhskohbo\NoCaptcha\Facades\NoCaptcha::display(['data-callback' => 'submit']) !!}
+                                    {!! Anhskohbo\NoCaptcha\Facades\NoCaptcha::renderJs() !!}
+                                </div>
                                 <input type="text" name="name" class="form-control form-control-lg"
                                        placeholder="Jon Snow"
                                        value="{{ isset($name) ? $name : old('name') }}" id="inlineFormInputGroup" required>
@@ -146,5 +150,15 @@
 @stop
 
 @section('js')
+    <script>
+        function submit() {
+            $("#target").unbind('submit').submit();
+        }
 
+        $('#target').on('submit', function (e) {
+            e.preventDefault();
+            $('.errors').hide();
+            $('#captcha').show();
+        });
+    </script>
 @stop

@@ -64,6 +64,10 @@
                         @csrf
                         <div class="form-group">
                             <div class="input-group input-group-lg">
+                                <div id="captcha">
+                                    {!! Anhskohbo\NoCaptcha\Facades\NoCaptcha::display(['data-callback' => 'submit']) !!}
+                                    {!! Anhskohbo\NoCaptcha\Facades\NoCaptcha::renderJs() !!}
+                                </div>
                                 <input type="email" name="email" class="form-control form-control-lg"
                                        placeholder="janedoe@company.com"
                                        value="{{ isset($email) ? $email : old('email') }}" required>
@@ -400,5 +404,15 @@
 @stop
 
 @section('js')
+    <script>
+        function submit() {
+            $("#target").unbind('submit').submit();
+        }
 
+        $('#target').on('submit', function (e) {
+            e.preventDefault();
+            $('.errors').hide();
+            $('#captcha').show();
+        });
+    </script>
 @stop

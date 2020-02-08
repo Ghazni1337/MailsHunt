@@ -222,6 +222,14 @@
             color: #555;
         }
         /*faq end*/
+
+        #captcha {
+            position: absolute;
+            right: 0;
+            top: -80px;
+            z-index: 9;
+            display: none;
+        }
     </style>
 
 

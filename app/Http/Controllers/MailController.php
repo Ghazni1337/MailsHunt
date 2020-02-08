@@ -5,11 +5,20 @@ namespace App\Http\Controllers;
 use App\Mail;
 use App\Stat;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Validator;
 
 class MailController extends Controller
 {
     public function search(Request $request)
     {
+        $validator = Validator::make(Input::all(), [
+            'g-recaptcha-response' => 'required'
+        ]);
+        if ($validator->fails()) {
+            return \redirect('/domain-search')->withErrors("Please verify that you are not a robot.")->withInput();
+        }
+
         $domain = $request->domain;
         if (!filter_var(gethostbyname($domain), FILTER_VALIDATE_IP)) {
             return \redirect('/domain-search')->withErrors("Please insert valid domain name")->withInput();
@@ -34,6 +43,13 @@ class MailController extends Controller
 
     public function find(Request $request)
     {
+        $validator = Validator::make(Input::all(), [
+            'g-recaptcha-response' => 'required'
+        ]);
+        if ($validator->fails()) {
+            return \redirect('/email-finder')->withErrors("Please verify that you are not a robot.")->withInput();
+        }
+
         $domain = $request->domain;
 
         if (!isset($request->name)) {
@@ -68,6 +84,13 @@ class MailController extends Controller
 
     public function verify(Request $request, $mail = null)
     {
+        $validator = Validator::make(Input::all(), [
+            'g-recaptcha-response' => 'required'
+        ]);
+        if ($validator->fails()) {
+            return \redirect('/email-verifier')->withErrors("Please verify that you are not a robot.")->withInput();
+        }
+
         $email = $mail;
         if ($request->isMethod('post')) {
             $email = $request->email;

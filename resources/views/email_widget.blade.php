@@ -43,6 +43,7 @@
 </div>
 
 @section('js')
+    @parent
     <script>
         var $body = document.getElementsByTagName('body')[0];
 

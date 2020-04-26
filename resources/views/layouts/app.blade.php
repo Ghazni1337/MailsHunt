@@ -302,10 +302,10 @@
                     <p><a href="/addons/email-verifier">Email Verifier</a></p>
                 </div>
                 <div class="col-md-3" style="padding-bottom: 20px">
-                    <p style="padding-bottom: 10px; letter-spacing: 2px"><strong>DEVRO LABS</strong></p>
-                    <p><a target="_blank" href="https://devrolabs.com/products-landing-page">Products</a></p>
-                    <p><a target="_blank" href="https://devrolabs.com/">Company</a></p>
-                    <p><a target="_blank" href="https://medium.com/devrolabs">Blog</a></p>
+                    <p style="padding-bottom: 10px; letter-spacing: 2px"><strong>ABOUT MAILSHUNT</strong></p>
+                    <p><a target="_blank" href="https://devrolabs.com/?ref=mailshunt">Company</a></p>
+                    <p><a target="_blank" href="https://devrolabs.com/products-landing-page/?ref=mailshunt">Other Products</a></p>
+                    <p><a href="/shop">Marketplace</a></p>
                 </div>
                 <div class="col-md-3" style="padding-bottom: 20px">
                     <p style="padding-bottom: 10px; letter-spacing: 2px"><strong>SUPPORT</strong></p>
@@ -316,7 +316,7 @@
             <hr style="background-color: #aeaeae;">
             <div class="row">
                 <div class="col-sm-6">
-                    <span style="float: left; color: #aeaeae">Copyright © 2019 <a style="color: white;" target="_blank" href="https://devrolabs.com/">Devro LABS</a></span>
+                    <span style="float: left; color: #aeaeae">© {{ now()->year }} <a style="color: white;" target="_blank" href="https://devrolabs.com/">Devro LABS</a></span>
                 </div>
                 <div class="col-sm-6">
                     <span style="float: right">

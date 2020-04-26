@@ -26,6 +26,10 @@
 @stop
 
 @section('content')
+    <div style="margin-bottom: 0; font-size: 16px; color: #091E42" class="alert alert-info alert-dismissible text-center">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        We have done some major changes to our 	Email Verifier API. <a href="https://mailshunt.com/email-verifier-api" target="_blank">Learn more →</a>
+    </div>
     <div class="container">
         <div class="col-md-8 offset-md-2 text-center info">
             <h1>Find anyone's email address</h1>

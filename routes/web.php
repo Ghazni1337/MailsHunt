@@ -61,5 +61,4 @@ Route::post('/email-finder', 'MailController@find')->middleware('request');
 Route::post('/email-verifier', 'MailController@verify')->middleware('request');
 Route::get('/email-verifier/{email}', 'MailController@verify')->middleware('request');
 Route::get('/api/verifier-lookup/{email}', 'APIController@verifierLookup')->middleware('request');
-Route::post('/api/verifier-lookup', 'APIController@verifierBulk')->middleware('request');
 Route::post('/api/extractor', 'APIController@saveExtractor');

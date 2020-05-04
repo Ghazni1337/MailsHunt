@@ -72,7 +72,7 @@
                                        placeholder="janedoe@company.com"
                                        value="{{ isset($email) ? $email : old('email') }}" required>
                                 <div class="input-group-append">
-                                    <button type="submit" class="btn btn-defalt btn-block btn-lg">
+                                    <button type="submit" class="btn btn-primary btn-block btn-lg">
                                         <strong>Verify</strong></button>
                                 </div>
                             </div>

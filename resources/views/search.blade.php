@@ -52,7 +52,7 @@
                                        placeholder="company.com"
                                        value="{{ isset($domain) ? $domain : old('domain') }}" required>
                                 <div class="input-group-append">
-                                    <button type="submit" class="btn btn-defalt btn-block btn-lg">Find email addresses</button>
+                                    <button type="submit" class="btn btn-primary btn-block btn-lg">Find email addresses</button>
                                 </div>
                             </div>
                         </div>

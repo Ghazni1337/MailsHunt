@@ -2,14 +2,6 @@
 
 @section('css')
     <style>
-        .btn-primary {
-             background-color: #7e57c2;
-             border-color: #7e57c2;
-        }
-        .btn-primary:hover {
-             background-color: #7e57c2;
-             border-color: #7e57c2;
-        }
         .seo {
             margin-bottom: -50px;
         }
@@ -48,7 +40,7 @@
                                 </div>
                                 <input type="text" name="domain" class="form-control form-control-lg" placeholder="company.com" required>
                                 <div class="input-group-append">
-                                    <button type="submit" class="btn btn-primary btn-block btn-lg">Find email addresses</button>
+                                    <button type="submit" class="btn btn-primary btn-block btn-lg"><b>Find email addresses</b></button>
                                 </div>
                             </div>
                         </div>

@@ -58,7 +58,7 @@
                                        placeholder="company.com"
                                        value="{{ isset($domain) ? $domain : old('domain') }}" id="inlineFormInputGroup" required>
                                 <div class="input-group-append">
-                                    <button type="submit" class="btn btn-defalt btn-block btn-lg"><strong><i
+                                    <button type="submit" class="btn btn-primary btn-block btn-lg"><strong><i
                                                     class="fas fa-search"></i></strong></button>
                                 </div>
                             </div>

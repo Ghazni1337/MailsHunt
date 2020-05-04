@@ -21,11 +21,14 @@ class MailController extends Controller
 
         $domain = $request->domain;
         if (!filter_var(gethostbyname($domain), FILTER_VALIDATE_IP)) {
-            return \redirect('/domain-search')->withErrors("Please insert valid domain name")->withInput();
+            $parse = parse_url($domain);
+            $domain = preg_replace('/^www\./', '', $parse['host']);
+            if (!isset($parse['host']) || !filter_var(gethostbyname($domain), FILTER_VALIDATE_IP)) {
+                return \redirect('/domain-search')->withErrors("Please insert valid domain name")->withInput();
+            }
         }
 
         $mails = Mail::select('mail')->where('mail', 'like', '%@' . $domain)->whereRaw("'mail' NOT REGEXP '^[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$'")->limit(10)->get();
-        $mailCount = Mail::where('mail', 'like', '%@' . $domain)->whereRaw("'mail' NOT REGEXP '^[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$'")->count();
 
         $stats = new Stat();
         $stats->ip = request()->ip();
@@ -38,7 +41,7 @@ class MailController extends Controller
             return \redirect('/domain-search')->withErrors("No email addresses found.")->withInput();
         }
 
-        return view("search", ['mails' => $mails, 'domain' => $domain, 'mailCount' => $mailCount]);
+        return view("search", ['mails' => $mails, 'domain' => $domain]);
     }
 
     public function find(Request $request)
@@ -57,7 +60,11 @@ class MailController extends Controller
         }
 
         if (!filter_var(gethostbyname($domain), FILTER_VALIDATE_IP)) {
-            return \redirect('/email-finder')->withErrors("Please insert valid domain name")->withInput();
+            $parse = parse_url($domain);
+            $domain = preg_replace('/^www\./', '', $parse['host']);
+            if (!isset($parse['host']) || !filter_var(gethostbyname($domain), FILTER_VALIDATE_IP)) {
+                return \redirect('/email-finder')->withErrors("Please insert valid domain name")->withInput();
+            }
         }
 
         $query = "";
@@ -66,7 +73,6 @@ class MailController extends Controller
         }
 
         $mails = Mail::select('mail')->where('mail', 'like', $query . '@' . $domain)->whereRaw("'mail' NOT REGEXP '^[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$'")->limit(10)->get();
-        $mailCount = Mail::select('mail')->where('mail', 'like', $query . '@' . $domain)->whereRaw("'mail' NOT REGEXP '^[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$'")->count();
 
         $stats = new Stat();
         $stats->ip = request()->ip();
@@ -79,7 +85,7 @@ class MailController extends Controller
             return \redirect('/email-finder')->withErrors("No email addresses found.")->withInput();
         }
 
-        return view("finder", ['mails' => $mails, 'domain' => $domain, 'name' => $request->name, 'mailCount' => $mailCount]);
+        return view("finder", ['mails' => $mails, 'domain' => $domain, 'name' => $request->name]);
     }
 
     public function verify(Request $request, $mail = null)

@@ -17,7 +17,6 @@
     <div class="row">
         <div class="col-md-8 offset-md-2">
             <div style="margin-bottom: 10px; text-align: right">
-                <span>{{$mailCount}} results&nbsp;&nbsp;&nbsp;</span>
                 <button class="btn btn-sm btn-default" onclick="copyAll({{$mails}})" type="button">Copy all</button>&nbsp;
                 <button class="btn btn-sm btn-default" onclick="download({{$mails}})" type="button">Export in CSV</button>
             </div>
@@ -32,7 +31,7 @@
                             </span>
                     </li>
                 @endforeach
-                @if($mailCount > 10)
+                @if(count($mails) == 10)
                     <li class="list-group-item">
                         <button onclick="alert('If you are looking for more results, please contact us!')" class="btn btn-default" type="button">Show more</button>
                     </li>

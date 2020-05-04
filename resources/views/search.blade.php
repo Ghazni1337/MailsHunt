@@ -150,7 +150,7 @@
 
 
     @if(isset($mails))
-        @include('email_widget', ['mails' => $mails, 'mailCount' => $mailCount])
+        @include('email_widget', ['mails' => $mails])
     @endif
 
 @stop

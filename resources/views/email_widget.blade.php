@@ -11,9 +11,12 @@
         text-decoration: none;
         color: #959595;
     }
+    .widget {
+        margin-top: 20px;
+    }
 </style>
 
-<div class="container">
+<div class="container widget">
     <div class="row">
         <div class="col-md-8 offset-md-2">
             <div style="margin-bottom: 10px; text-align: right">

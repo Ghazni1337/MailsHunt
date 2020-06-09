@@ -26,8 +26,9 @@
             <h1><img src="{{ asset('image/search.png') }}" height="50px" alt="Search MailsHunt"> Domain Search</h1>
             <h4>The most powerful email-finding tool which is able to list all the email addresses of people who are working in a particular company.</h4>
         </div>
+        @include('ads.ad_bar')
         <div class="row">
-            <div class="col-md-8 offset-md-2" style="margin-top: 40px;">
+            <div class="col-md-8 offset-md-2" style="margin-top: 20px;">
                 <div class="jumbotron">
                     <div class="errors">
                         @if ($errors->any())
@@ -61,6 +62,7 @@
                 </div>
             </div>
         </div>
+        @include('ads.ad_bottom')
     </div>
 
 

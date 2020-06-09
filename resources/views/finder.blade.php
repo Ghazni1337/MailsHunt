@@ -26,8 +26,9 @@
             <h1><img src="{{ asset('image/find.png') }}" height="50px" alt="Search MailsHunt"> Email Finder</h1>
             <h4>The most accurate and complete email-finding tool. Type the name and the website to find anyone's email address.</h4>
         </div>
+        @include('ads.ad_bar')
         <div class="row">
-            <div class="col-lg-8 offset-lg-2" style="margin-top: 40px;">
+            <div class="col-lg-8 offset-lg-2" style="margin-top: 20px;">
                 <div class="jumbotron">
                     <div class="errors">
                         @if ($errors->any())
@@ -68,6 +69,7 @@
                 </div>
             </div>
         </div>
+        @include('ads.ad_bottom')
     </div>
 
     @if(!isset($mails))

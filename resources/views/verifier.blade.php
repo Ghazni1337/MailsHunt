@@ -46,8 +46,9 @@
             <h1><img src="{{ asset('image/approval.png') }}" height="50px" alt="Email Verifier"> Email Verifier</h1>
             <h4>The Email Verifier does a complete check of the email address to let you send your emails with complete confidence.</h4>
         </div>
+        @include('ads.ad_bar')
         <div class="row">
-            <div class="col-md-8 offset-md-2" style="margin-top: 40px;">
+            <div class="col-md-8 offset-md-2" style="margin-top: 20px;">
                 <div class="jumbotron">
                     <div class="errors">
                         @if ($errors->any())
@@ -209,6 +210,7 @@
                 </div>
             </div>
         </div>
+        @include('ads.ad_bottom')
     </div>
 
     @if(!isset($verify))

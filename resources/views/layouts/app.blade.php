@@ -130,6 +130,7 @@
             box-shadow: 0 6px 30px rgba(0,0,0,.25);
             border-radius: 3px;
             padding: 2rem 2rem !important;
+            margin-bottom: 20px;
         }
         mark {
             background-color: #7e57c2;
@@ -171,12 +172,13 @@
         /*top info*/
         .info {
             font-family: open sans,sans-serif !important;
-            padding-top: 50px;
+            padding-top: 10px;
         }
         .info h4 {
             color: #555555;
             font-size: 18px;
-            padding-top: 15px;
+            padding-top: 10px;
+            margin-bottom: 10px;
         }
 
         /*mid layer extra*/

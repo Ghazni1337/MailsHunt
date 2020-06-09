@@ -1,5 +1,5 @@
-<div class="row text-center">
-    <div class="col-md-12 d-none d-md-block" style="max-width: 728px;">
+<div class="row text-center ad-row">
+    <div class="col-md-12 d-none d-md-block ad-board">
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <!-- mailshunt bottom box -->
         <ins class="adsbygoogle"
@@ -13,7 +13,7 @@
         </script>
     </div>
 
-    <div class="col-sm-12 d-md-none" style="max-width: 336px;">
+    <div class="col-sm-12 d-md-none ad-box">
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <!-- mailshunt bottom box -->
         <ins class="adsbygoogle"

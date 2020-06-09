@@ -242,6 +242,25 @@
             background-color: #7e57c2;
             border-color: #7e57c2;
         }
+
+        /*ads css*/
+        .ad-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+        .ad-box {
+            min-width: 336px;
+            display: inline-block;
+            align-self: flex-start;
+        }
+        .ad-board {
+            display: block;
+            max-width: 728px;
+            margin: 0 auto;
+        }
+        /*ads css*/
     </style>
 
 

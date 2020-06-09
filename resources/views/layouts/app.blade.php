@@ -251,14 +251,14 @@
             margin: 0 auto;
         }
         .ad-box {
-            min-width: 336px;
+            max-width: 336px;
             display: inline-block;
             align-self: flex-start;
         }
         .ad-board {
-            display: block;
             max-width: 728px;
-            margin: 0 auto;
+            display: inline-block;
+            align-self: flex-start;
         }
         /*ads css*/
     </style>

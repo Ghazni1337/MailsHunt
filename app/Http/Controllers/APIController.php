@@ -20,7 +20,11 @@ class APIController extends Controller
         return json_encode(VerifierController::lookup($email), JSON_UNESCAPED_SLASHES);
     }
 
-    public function verifierBulk(Request $request) {
+    public function verifierBulk(Request $request, $hash) {
+        if (empty($hash) || $hash != "qzz8205tnbb9j2i7xzz8") {
+            return json_encode(["success" => false, "message" => "failed to authenticate"], JSON_UNESCAPED_SLASHES);
+        }
+
         set_time_limit(0);
         if ($request->getContent() && isset(json_decode($request->getContent(), true)["emails"])) {
             $emails = json_decode($request->getContent(), true)["emails"];

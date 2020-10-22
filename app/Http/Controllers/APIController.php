@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\APIUser;
 use App\Mail;
 use App\Stat;
 use Illuminate\Http\Request;
@@ -21,7 +22,9 @@ class APIController extends Controller
     }
 
     public function verifierBulk(Request $request, $hash) {
-        if (empty($hash) || $hash != "qzz8205tnbb9j2i7xzz8") {
+        $user = APIUser::where('hash', $hash)->first();
+
+        if (!$user) {
             return json_encode(["success" => false, "message" => "failed to authenticate"], JSON_UNESCAPED_SLASHES);
         }
 

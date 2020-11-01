@@ -22,8 +22,12 @@ class MailController extends Controller
         $domain = $request->domain;
         if (!filter_var(gethostbyname($domain), FILTER_VALIDATE_IP)) {
             $parse = parse_url($domain);
+            if (!isset($parse['host'])) {
+                return \redirect('/domain-search')->withErrors("Please insert valid domain name")->withInput();
+            }
+
             $domain = preg_replace('/^www\./', '', $parse['host']);
-            if (!isset($parse['host']) || !filter_var(gethostbyname($domain), FILTER_VALIDATE_IP)) {
+            if (!filter_var(gethostbyname($domain), FILTER_VALIDATE_IP)) {
                 return \redirect('/domain-search')->withErrors("Please insert valid domain name")->withInput();
             }
         }

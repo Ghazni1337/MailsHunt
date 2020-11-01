@@ -20,6 +20,10 @@ class MailController extends Controller
         }
 
         $domain = $request->domain;
+        if (strlen($domain) > 255) {
+            return \redirect('/domain-search')->withErrors("Please insert valid domain name")->withInput();
+        }
+
         if (!filter_var(gethostbyname($domain), FILTER_VALIDATE_IP)) {
             $parse = parse_url($domain);
             if (!isset($parse['host'])) {

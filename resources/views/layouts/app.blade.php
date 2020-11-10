@@ -262,6 +262,27 @@
         /*ads css*/
     </style>
 
+<script data-ad-client="ca-pub-9001355521757764" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<!-- Smartsupp Live Chat script -->
+<script type="text/javascript">
+var _smartsupp = _smartsupp || {};
+_smartsupp.key = 'f3002b98f59cbc5fc5c622f1d44fbabb034970cd';
+window.smartsupp||(function(d) {
+  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+  c.type='text/javascript';c.charset='utf-8';c.async=true;
+  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+})(document);
+</script>
+
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "3x7euclrk4");
+</script>
 
 </head>
 <body>
@@ -293,9 +314,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/addons">ADD-ONS</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/shop">SHOP</a>
-                    </li>
+
                     {{--<li class="nav-item">--}}
                         {{--<a class="nav-link" href="/faq">FAQ</a>--}}
                     {{--</li>--}}
@@ -335,7 +354,7 @@
                     <p style="padding-bottom: 10px; letter-spacing: 2px"><strong>ABOUT MAILSHUNT</strong></p>
                     <p><a target="_blank" href="https://devrolabs.com/?ref=mailshunt">Company</a></p>
                     <p><a target="_blank" href="https://devrolabs.com/products-landing-page/?ref=mailshunt">Other Products</a></p>
-                    <p><a href="/shop">Marketplace</a></p>
+
                 </div>
                 <div class="col-md-3" style="padding-bottom: 20px">
                     <p style="padding-bottom: 10px; letter-spacing: 2px"><strong>SUPPORT</strong></p>

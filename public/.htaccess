@@ -19,3 +19,8 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 </IfModule>
+
+#Force non-www:
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^www.mailshunt.com [NC]
+RewriteRule ^(.*)$ https://mailshunt.com/$1 [L,R=301]

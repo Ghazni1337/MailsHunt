@@ -2,6 +2,8 @@
 
 return [
 
+    'url_base' => env('APP_URL_BASE', 'http://localhost'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -161,6 +163,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
 
         /*
          * Package Service Providers...

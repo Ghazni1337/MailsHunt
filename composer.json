@@ -12,9 +12,12 @@
         "ext-json": "*",
         "anhskohbo/no-captcha": "^3.1",
         "fideloper/proxy": "^4.0",
-        "laravel/framework": "5.8.*",
+        "hyn/multi-tenant": "5.5.*",
+        "laravel/framework": "^6.0",
         "laravel/tinker": "^1.0",
-        "symfony/translation": "4.3.8"
+        "stancl/tenancy": "^3.2",
+        "symfony/translation": "4.3.8",
+        "tymon/jwt-auth": "^1.0"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

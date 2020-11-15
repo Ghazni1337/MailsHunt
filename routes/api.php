@@ -20,6 +20,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group(['middleware' => 'cors', 'prefix' => 'v1'], function () {
     Route::post('register', 'Api\ApiAuthController@registerTenant');
     Route::post('login', 'Api\ApiAuthController@login');
+    Route::post('domain-search', 'MailController@search')->middleware('request');
+    Route::post('email-finder', 'MailController@find')->middleware('request');
+    Route::post('email-verifier', 'MailController@verify')->middleware('request');
 });
 
 Route::group(['middleware' => ['auth.jwt', 'cors'], 'prefix' => 'v1'], function () {

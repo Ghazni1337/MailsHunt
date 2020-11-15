@@ -21,9 +21,9 @@ class RequestMiddleware
         if (isset($stats[4]) && Carbon::parse($stats[4]->created_at)->addHour()->gt(Carbon::now())) {
             $message = "You are doing that too much. Try again in " . str_replace(' after', '.', Carbon::parse($stats[2]->created_at)->addHour()->diffForHumans(Carbon::now()));
             if ($request->path() === "domain-search") {
-                return \redirect('/domain-search')->withErrors($message)->withInput();
+                return response()->json($message);
             } else {
-                return back()->withErrors($message)->withInput();
+                return response()->json($message);
             }
         }
 

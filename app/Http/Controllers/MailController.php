@@ -16,23 +16,23 @@ class MailController extends Controller
             'g-recaptcha-response' => 'required'
         ]);
         if ($validator->fails()) {
-            return \redirect('/domain-search')->withErrors("Please verify that you are not a robot.")->withInput();
+            return response()->json(array('success'=>false, "robot verifier" => "Please verify that you are not a robot."));
         }
 
         $domain = $request->domain;
         if (strlen($domain) > 255) {
-            return \redirect('/domain-search')->withErrors("Please insert valid domain name")->withInput();
+            return response()->json(array('success'=>false, 'invalid domain'=>'Please insert valid domain name'));
         }
 
         if (!filter_var(gethostbyname($domain), FILTER_VALIDATE_IP)) {
             $parse = parse_url($domain);
             if (!isset($parse['host'])) {
-                return \redirect('/domain-search')->withErrors("Please insert valid domain name")->withInput();
+                return response()->json(array('success'=>false, 'invalid domain' => 'Please insert valid domain name'));
             }
 
             $domain = preg_replace('/^www\./', '', $parse['host']);
             if (!filter_var(gethostbyname($domain), FILTER_VALIDATE_IP)) {
-                return \redirect('/domain-search')->withErrors("Please insert valid domain name")->withInput();
+                return response()->json(array('success'=>false, 'invalid domain' => 'Please insert valid domain name'));
             }
         }
 
@@ -46,10 +46,11 @@ class MailController extends Controller
         $stats->save();
 
         if ($mails->isEmpty()) {
-            return \redirect('/domain-search')->withErrors("No email addresses found.")->withInput();
+            return response()->json(array('success'=>false,'No email' => 'No email addresses found.'));
         }
 
-        return view("search", ['mails' => $mails, 'domain' => $domain]);
+        // return view("search", ['mails' => $mails, 'domain' => $domain]);
+        return response()->json(array('success'=>true, 'mails'=> $mails, 'domain'=>$domain));
     }
 
     public function find(Request $request)
@@ -58,20 +59,20 @@ class MailController extends Controller
             'g-recaptcha-response' => 'required'
         ]);
         if ($validator->fails()) {
-            return \redirect('/email-finder')->withErrors("Please verify that you are not a robot.")->withInput();
+            return response()->json(array('success' => false, 'robot verifier' => 'Please verify that you are not a robot.'));
         }
 
         $domain = $request->domain;
 
         if (!isset($request->name)) {
-            return \redirect('/email-finder')->withErrors("Please insert full name")->withInput();
+            return response()->json(array('success'=> false, 'finder error' => 'Please insert full name'));
         }
 
         if (!filter_var(gethostbyname($domain), FILTER_VALIDATE_IP)) {
             $parse = parse_url($domain);
             $domain = preg_replace('/^www\./', '', $parse['host']);
             if (!isset($parse['host']) || !filter_var(gethostbyname($domain), FILTER_VALIDATE_IP)) {
-                return \redirect('/email-finder')->withErrors("Please insert valid domain name")->withInput();
+                return response()->json(array('success' => false, 'invalid domain' => 'Please insert valid domain name'));
             }
         }
 
@@ -90,10 +91,11 @@ class MailController extends Controller
         $stats->save();
 
         if ($mails->isEmpty()) {
-            return \redirect('/email-finder')->withErrors("No email addresses found.")->withInput();
+            return response()->json(array('success' => false, 'No email' => 'No email addresses found.'));
         }
 
-        return view("finder", ['mails' => $mails, 'domain' => $domain, 'name' => $request->name]);
+        return response()->json(array('mails' => $mails, 'domain' => $domain, 'name' => $request->name));
+        // return view("finder", ['mails' => $mails, 'domain' => $domain, 'name' => $request->name]);
     }
 
     public function verify(Request $request, $mail = null)
@@ -102,7 +104,7 @@ class MailController extends Controller
             'g-recaptcha-response' => 'required'
         ]);
         if ($validator->fails()) {
-            return \redirect('/email-verifier')->withErrors("Please verify that you are not a robot.")->withInput();
+            return response()->json(array('success' => false, 'robot verifier' => 'Please verify that you are not a robot'));
         }
 
         $email = $mail;
@@ -131,7 +133,7 @@ class MailController extends Controller
         $stats->type = 2;
         $stats->query = $email;
         $stats->save();
-
-        return view("verifier", ['verify' => $verify, 'email' => $email]);
+        return response()->json(array('success' => true, 'verify' => $verify, 'email' => $email));
+        // return view("verifier", ['verify' => $verify, 'email' => $email]);
     }
 }

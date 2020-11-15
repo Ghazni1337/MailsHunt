@@ -63,3 +63,17 @@ Route::get('/email-verifier/{email}', 'MailController@verify')->middleware('requ
 Route::get('/api/verifier-lookup/{email}', 'APIController@verifierLookup')->middleware('request');
 Route::post('/api/verifier-lookup/{hash}', 'APIController@verifierBulk');
 Route::post('/api/extractor', 'APIController@saveExtractor');
+
+//new admin routes
+
+Route::get('login', function(){
+    return view('admin.login');
+})->name('admin.login');
+
+Route::post('login', 'AdminController@adminLogin');
+
+Route::group(['middleware' => 'auth:admin', 'prefix' => 'mailshunt'], function () {
+    Route::get('admin', function(){
+        return view('admin.index');
+    })->name('admin');    
+});

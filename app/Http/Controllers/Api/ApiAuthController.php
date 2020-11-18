@@ -55,12 +55,11 @@ class ApiAuthController extends Controller
         }else{
 
             $acct_slug = strtolower( $request->f_name.time().$request->l_name.time() ); 
-            $acct_slug = str_replace(' ', '-', strtolower($request->company_name) );
-        }else{
-
-            $acct_slug = strtolower( $request->f_name.$request->l_name); 
-
+            // $acct_slug = str_replace(' ', '-', strtolower($request->company_name) );
         }
+
+            // $acct_slug = strtolower( $request->f_name.$request->l_name); 
+
         //create a unique fqdn using either the company name or user's names slug and the app's base url
         return $acct_slug.'.'.$baseUrl;
     }
@@ -75,8 +74,8 @@ class ApiAuthController extends Controller
             'password' => 'required|string|min:6|confirmed',
             'phone' => 'required',
 
-            'company_name'  => 'string|min:3|regex:/^[\pL\s\-]+$/u'
-            'company_name'  => 'required|string|min:3|regex:/^[\pL\s\-]+$/u'
+            'company_name'  => 'string|min:3|regex:/^[\pL\s\-]+$/u',
+            // 'company_name'  => 'required|string|min:3|regex:/^[\pL\s\-]+$/u'
 
         ], $msg);
     }
@@ -112,7 +111,6 @@ class ApiAuthController extends Controller
         return response()->json([
             'success' => true,
             'user'    => auth()->user(),
-            'user'    => JWTAuth::toUser($token),
             'token' => $token,
         ]);
     }

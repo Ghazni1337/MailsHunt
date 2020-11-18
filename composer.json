@@ -15,9 +15,9 @@
         "hyn/multi-tenant": "5.5.*",
         "laravel/framework": "^6.0",
         "laravel/tinker": "^1.0",
-        "stancl/tenancy": "^3.2",
         "symfony/translation": "4.3.8",
-        "tymon/jwt-auth": "^1.0"
+        "tymon/jwt-auth": "^1.0",
+        "vlucas/phpdotenv" : "^3.0"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

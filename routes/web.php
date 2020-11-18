@@ -72,8 +72,13 @@ Route::get('login', function(){
 
 Route::post('login', 'AdminController@adminLogin');
 
-Route::group(['middleware' => 'auth:admin', 'prefix' => 'mailshunt'], function () {
-    Route::get('admin', function(){
-        return view('admin.index');
-    })->name('admin');    
+Route::group(['middleware' => 'auth:admin', 'prefix' => 'admin'], function () {
+    Route::get('dashboard', function(){
+        return view('admin.index', ['title' => 'Admin area']);
+    })->name('dashboard');
+
+    // PLANS 
+    Route::get('add_plan', function(){
+        return view('plans.add',['title' => 'Add new plan']);
+    })->name('add_plan');    
 });

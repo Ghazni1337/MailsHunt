@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Tenant;
 use App\User;
 use JWTAuth;
+use Hyn\Tenancy\Environment;
+use Hyn\Tenancy\Models\Website;
+use Hyn\Tenancy\Models\Hostname;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -21,12 +24,13 @@ class ApiAuthController extends Controller
 
         if ($validator->fails())
         {
-            return response()->json(['errors'=>$validator->errors()->all()], 422);
+            return response()->json(['success'=>false,'errors'=>$validator->errors()->all()], 422);
         }
 
         $fqdn = $this->createFQDN($request);
 
-        $tenant = Tenant::create($fqdn);
+        //send built fqdn and email to be attached to the user's website
+        $tenant = Tenant::create($fqdn, $request->email);
 
         $user = $this->create($request->all());
 
@@ -66,7 +70,15 @@ class ApiAuthController extends Controller
 
     public function validator(array $data)
     {
-        $msg = ['company_name.regex' => 'Company name may only contain letters, hyphens and whitespaces'];
+        $msg = [
+            'company_name.regex' => 'Company name may only contain letters, hyphens and whitespaces',
+            'f_name.required'    => 'The first name field is required',
+            'f_name.string'      => 'The first name must be text',
+            'f_name.max'         => 'The first name too long (Max: 220)',
+            'l_name.required'    => 'The last name field is required',
+            'l_name.string'      => 'The last name must be text',
+            'l_name.max'         => 'The last name is too long (Max: 220)',
+        ];
         return Validator::make($data, [
             'l_name' => 'required|string|max:255',
             'f_name' => 'required|string|max:255',
@@ -74,8 +86,7 @@ class ApiAuthController extends Controller
             'password' => 'required|string|min:6|confirmed',
             'phone' => 'required',
 
-            'company_name'  => 'string|min:3|regex:/^[\pL\s\-]+$/u',
-            // 'company_name'  => 'required|string|min:3|regex:/^[\pL\s\-]+$/u'
+            'company_name'  => 'sometimes|string|min:3|regex:/^[\pL\s\-]+$/u',
 
         ], $msg);
     }
@@ -111,6 +122,7 @@ class ApiAuthController extends Controller
         return response()->json([
             'success' => true,
             'user'    => auth()->user(),
+            'fqdn'    => $request->fqdn,
             'token' => $token,
         ]);
     }
@@ -134,5 +146,22 @@ class ApiAuthController extends Controller
                 'message' => 'Sorry, the user cannot be logged out'
             ], 500);
         }
+    }
+
+    public function findFQDN(Request $request)
+    {
+        // Retrieve email-type hostname
+        $hostname = Hostname::where('fqdn', $request->email)->first();
+        if ($hostname) {
+            return response()->json([
+                'success' => true,
+                'fqdn'    => $hostname->fqdn
+            ]);
+        }
+
+        return response()->json([
+            'success'   => false,
+            'message'   => 'No accounts found for this email address'
+        ]);
     }
 }

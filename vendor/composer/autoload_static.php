@@ -30,6 +30,7 @@ class ComposerStaticInitc888d679221b74b45458c3ef06a9b9ec
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         '0d8253363903f0ac7b0978dcde4e28a0' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/helpers.php',
         'f36d7ea9144e9f8ff76be0eaaff1ee80' => __DIR__ . '/..' . '/stancl/tenancy/src/helpers.php',
+        'b4e3f29b106af37a2bb239f73cdf68c7' => __DIR__ . '/../..' . '/app/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -528,6 +529,7 @@ class ComposerStaticInitc888d679221b74b45458c3ef06a9b9ec
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\MailController' => __DIR__ . '/../..' . '/app/Http/Controllers/MailController.php',
+        'App\\Http\\Controllers\\PlanController' => __DIR__ . '/../..' . '/app/Http/Controllers/PlanController.php',
         'App\\Http\\Controllers\\VerifierController' => __DIR__ . '/../..' . '/app/Http/Controllers/VerifierController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
@@ -535,6 +537,7 @@ class ComposerStaticInitc888d679221b74b45458c3ef06a9b9ec
         'App\\Http\\Middleware\\Cors' => __DIR__ . '/../..' . '/app/Http/Middleware/Cors.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\EnforceTenancy' => __DIR__ . '/../..' . '/app/Http/Middleware/EnforceTenancy.php',
+        'App\\Http\\Middleware\\IdentifyTenant' => __DIR__ . '/../..' . '/app/Http/Middleware/IdentifyTenant.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\RequestMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/RequestMiddleware.php',
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',

@@ -13,47 +13,47 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('home');
-});
+// Route::get('/', function () {
+//     return view('home');
+// });
 
-Route::get('/domain-search', function () {
-    return view('search');
-})->name('domain-search');
+// Route::get('/domain-search', function () {
+//     return view('search');
+// })->name('domain-search');
 
-Route::get('/email-finder', function () {
-    return view('finder');
-});
+// Route::get('/email-finder', function () {
+//     return view('finder');
+// });
 
-Route::get('/email-verifier', function () {
-    return view('verifier');
-});
+// Route::get('/email-verifier', function () {
+//     return view('verifier');
+// });
 
-Route::get('/shop', function () {
-    return view('shop');
-});
+// Route::get('/shop', function () {
+//     return view('shop');
+// });
 
-Route::get('/email-verifier-api', function () {
-    return view('api');
-});
+// Route::get('/email-verifier-api', function () {
+//     return view('api');
+// });
 
-Route::get('/support', function () {
-    return view('support');
-});
+// Route::get('/support', function () {
+//     return view('support');
+// });
 
-//addons
-Route::get('/addons', function () {
-    return view('addons.home');
-});
-Route::get('/addons/email-extractor', function () {
-    return view('addons.extractor');
-});
-Route::get('/addons/email-finder', function () {
-    return view('addons.finder');
-});
-Route::get('/addons/email-verifier', function () {
-    return view('addons.verifier');
-});
+// //addons
+// Route::get('/addons', function () {
+//     return view('addons.home');
+// });
+// Route::get('/addons/email-extractor', function () {
+//     return view('addons.extractor');
+// });
+// Route::get('/addons/email-finder', function () {
+//     return view('addons.finder');
+// });
+// Route::get('/addons/email-verifier', function () {
+//     return view('addons.verifier');
+// });
 //end addons
 
 Route::post('/domain-search', 'MailController@search')->middleware('request');
@@ -65,13 +65,18 @@ Route::post('/api/verifier-lookup/{hash}', 'APIController@verifierBulk');
 Route::post('/api/extractor', 'APIController@saveExtractor');
 
 //new admin routes
+//
+//LOGIN
+Route::get('/', function(){
+    return view('admin.login');
+})->name('home');
 
 Route::get('login', function(){
     return view('admin.login');
 })->name('admin.login');
-
 Route::post('login', 'AdminController@adminLogin');
 
+//DASHBOARD INDEX
 Route::group(['middleware' => 'auth:admin', 'prefix' => 'admin'], function () {
     Route::get('dashboard', function(){
         return view('admin.index', ['title' => 'Admin area']);
@@ -80,5 +85,10 @@ Route::group(['middleware' => 'auth:admin', 'prefix' => 'admin'], function () {
     // PLANS 
     Route::get('add_plan', function(){
         return view('plans.add',['title' => 'Add new plan']);
-    })->name('add_plan');    
+    })->name('plan.add'); 
+    Route::get('all_plans', 'PlanController@index')->name('plan.all');
+    Route::post('add_plan', 'PlanController@store');  
+    Route::get('edit_plan/{id}', 'PlanController@edit')->name('plan.edit');
+    Route::post('edit_plan/{id}', 'PlanController@update');
+    Route::post('destroy_plan', 'PlanController@destroy')->name('destroy_plan'); 
 });

@@ -28,7 +28,7 @@ class Tenant
         app(WebsiteRepository::class)->delete($this->website, true);
     }
     
-    public static function create($fqdn): Tenant
+    public static function create($fqdn, $email): Tenant
     {
         // Create New Website
         $website = new Website;
@@ -38,6 +38,12 @@ class Tenant
         $hostname = new Hostname;
         $hostname->fqdn = $fqdn;
         app(HostnameRepository::class)->attach($hostname, $website);
+
+        // create new hostname using email
+        $hostnameEmail = new Hostname;
+        $hostnameEmail->fqdn = $email;
+        //attach hostname (email) to website
+        app(HostnameRepository::class)->attach($hostnameEmail, $website);
         
         // make hostname current
         app(Environment::class)->tenant($website);

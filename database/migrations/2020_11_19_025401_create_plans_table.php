@@ -18,6 +18,9 @@ class CreatePlansTable extends Migration
             $table->string('title');
             $table->integer('price');
             $table->string('credits');
+            $table->string('users');
+            $table->string('daily_emails');
+            $table->string('campaigns');
             $table->timestamps();
         });
     }

@@ -30,16 +30,16 @@
             <div class="container-fluid h-100">
                 <div class="row flex-row h-100 bg-white">
                     <div class="col-xl-8 col-lg-6 col-md-5 p-0 d-md-block d-lg-block d-sm-none d-none">
-                        <div class="lavalite-bg" style="background-image:url( {{asset('admin/img/auth/login-bg.png')}} )">
+                        <div class="lavalite-bg" style="background-image:url( {{asset('image/login-bg.png')}} )">
                             <div class="lavalite-overlay"></div>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-6 col-md-7 my-auto p-0">
                         <div class="authentication-form mx-auto">
                             <div class="logo-centered">
-                                <a href=""><img src="{{asset('admin/src/img/brand.svg')}}" alt=""></a>
+                                <a href=""><img src="{{asset('image/icon.png')}}" alt=""></a>
                             </div>
-                            <h3>MailsHunt Admin Area</h3>
+                            <h3 class="l-title">MailsHunt admin area</h3>
                             @include('layouts.flash')
                             {{-- <p>Hey there! Please provide you credentials to signin</p> --}}
                             <form method="post">
@@ -64,7 +64,7 @@
                                     </div>
                                 </div>
                                 <div class="sign-btn text-center">
-                                    <button class="btn btn-theme">Sign In</button>
+                                    <button class="btn login-btn">Sign In</button>
                                 </div>
                             </form>
                             
@@ -82,6 +82,17 @@
         <script src="{{asset('admin/plugins/screenfull/dist/screenfull.js')}}"></script>
         <script src="{{asset('admin/dist/js/theme.js')}}"></script>
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <style type="text/css">
+            .login-btn{
+                background-color: #7e57c2 !important;
+                border: 1px solid #7e57c2 !important;
+                color: white;
+            }
+
+            .l-title{
+                font-weight: bold;
+            }
+        </style>
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
             function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;

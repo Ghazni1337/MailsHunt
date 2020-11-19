@@ -11,7 +11,7 @@
         <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800" rel="stylesheet">
-        
+        <link rel="stylesheet" href="{{asset('admin/dist/css/custom.css')}}">
         <link rel="stylesheet" href="{{asset('admin/plugins/bootstrap/dist/css/bootstrap.min.css')}}">
         <link rel="stylesheet" href="{{asset('admin/plugins/fontawesome-free/css/all.min.css')}}">
         <link rel="stylesheet" href="{{asset('admin/plugins/icon-kit/dist/css/iconkit.min.css')}}">
@@ -26,9 +26,9 @@
         <link rel="stylesheet" href="{{asset('admin/plugins/owl.carousel/dist/admin/owl.theme.default.min.css')}}">
         <link rel="stylesheet" href="{{asset('admin/dist/css/theme.min.css')}}">
         <script src="{{asset('admin/src/js/vendor/modernizr-2.8.3.min.js')}}"></script>
-        {{-- <script type='text/javascript'>
+        <script type='text/javascript'>
         var page_data = {!! pageJsonData() !!};
-      </script> --}}
+        </script>
     </head>
         <body>
 
@@ -120,10 +120,11 @@
             </header>
 
             <div class="page-wrap">
-                
+            {{-- Ajax Call Screen Wait Area --}}
+            <div class="load-screen"></div>
             @include('layouts.sidebar')
 
-        @yield('content')
+            @yield('content')
 
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script>window.jQuery || document.write('<script src="{{asset('admin/src/js/vendor/jquery-3.3.1.min.js')}}"><\/script>')</script>
@@ -145,6 +146,8 @@
         <script src="{{asset('admin/js/widgets.js')}}"></script>
         <script src="{{asset('admin/js/charts.js')}}"></script>
         <script src="{{asset('admin/dist/js/theme.min.js')}}"></script>
+        <script src="{{asset('admin/js/sweet-alert/sweetalert.min.js')}}"></script>
+        <script src="{{asset('admin/dist/js/custom.js')}}"></script>
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

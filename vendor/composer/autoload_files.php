@@ -29,4 +29,5 @@ return array(
     '801c31d8ed748cfa537fa45402288c95' => $vendorDir . '/psy/psysh/src/functions.php',
     '0d8253363903f0ac7b0978dcde4e28a0' => $vendorDir . '/beyondcode/laravel-dump-server/helpers.php',
     'f36d7ea9144e9f8ff76be0eaaff1ee80' => $vendorDir . '/stancl/tenancy/src/helpers.php',
+    'b4e3f29b106af37a2bb239f73cdf68c7' => $baseDir . '/app/helpers.php',
 );

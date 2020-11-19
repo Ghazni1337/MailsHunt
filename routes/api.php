@@ -23,6 +23,8 @@ Route::group(['middleware' => ['cors', 'id.tenant'], 'prefix' => 'v1'], function
     Route::post('domain-search', 'MailController@search')->middleware('request');
     Route::post('email-finder', 'MailController@find')->middleware('request');
     Route::post('email-verifier', 'MailController@verify')->middleware('request');
+    Route::get('email-verifier/{email}', 'MailController@verify')->middleware('request');
+    Route::post('get-fqdn', 'Api\ApiAuthController@findFQDN');
 });
 
 Route::group(['middleware' => ['auth.jwt', 'cors'], 'prefix' => 'v1'], function () {

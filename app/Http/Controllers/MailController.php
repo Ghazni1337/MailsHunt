@@ -12,12 +12,12 @@ class MailController extends Controller
 {
     public function search(Request $request)
     {
-        $validator = Validator::make(Input::all(), [
-            'g-recaptcha-response' => 'required'
-        ]);
-        if ($validator->fails()) {
-            return response()->json(array('success'=>false, "robot verifier" => "Please verify that you are not a robot."));
-        }
+        // $validator = Validator::make(Input::all(), [
+        //     'g-recaptcha-response' => 'required'
+        // ]);
+        // if ($validator->fails()) {
+        //     return response()->json(array('success'=>false, "robot verifier" => "Please verify that you are not a robot."));
+        // }
 
         $domain = $request->domain;
         if (strlen($domain) > 255) {
@@ -55,12 +55,12 @@ class MailController extends Controller
 
     public function find(Request $request)
     {
-        $validator = Validator::make(Input::all(), [
-            'g-recaptcha-response' => 'required'
-        ]);
-        if ($validator->fails()) {
-            return response()->json(array('success' => false, 'robot verifier' => 'Please verify that you are not a robot.'));
-        }
+        // $validator = Validator::make(Input::all(), [
+        //     'g-recaptcha-response' => 'required'
+        // ]);
+        // if ($validator->fails()) {
+        //     return response()->json(array('success' => false, 'robot verifier' => 'Please verify that you are not a robot.'));
+        // }
 
         $domain = $request->domain;
 
@@ -100,12 +100,12 @@ class MailController extends Controller
 
     public function verify(Request $request, $mail = null)
     {
-        $validator = Validator::make(Input::all(), [
-            'g-recaptcha-response' => 'required'
-        ]);
-        if ($validator->fails()) {
-            return response()->json(array('success' => false, 'robot verifier' => 'Please verify that you are not a robot'));
-        }
+        // $validator = Validator::make(Input::all(), [
+        //     'g-recaptcha-response' => 'required'
+        // ]);
+        // if ($validator->fails()) {
+        //     return response()->json(array('success' => false, 'robot verifier' => 'Please verify that you are not a robot'));
+        // }
 
         $email = $mail;
         if ($request->isMethod('post')) {

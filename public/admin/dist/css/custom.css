@@ -1,0 +1,41 @@
+.add-plan-form{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: solid 2px #e7eff5;
+	border-radius: 2px 2px 0 0;
+	margin-left: 460px;
+	margin-top: 80px;
+	font-weight: bold;
+}
+
+.submit-btn{
+	margin-left: 50%;
+	background-color: #7e57c2 !important;
+	border: 1px solid #7e57c2 !important;
+}
+
+span#count{
+	color: #7e57c2 !important;
+	font-weight: bold !important;
+}
+
+/*Ajax Loading screen*/
+/*.load-screen{
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgb(255, 255, 255, .8) url('../img/ajax-loader.gif') 50% 50% no-repeat;
+}
+
+.page-wrap.loading .load-screen{
+  overflow: hidden;
+}
+
+.page-wrap.loading .load-screen{
+  display: block;
+}*/

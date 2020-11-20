@@ -42,7 +42,7 @@
                             <h3 class="l-title">MailsHunt admin area</h3>
                             @include('layouts.flash')
                             {{-- <p>Hey there! Please provide you credentials to signin</p> --}}
-                            <form method="post">
+                            <form method="post" action="{{ route('login') }}">
                                 @csrf
                                 <div class="form-group">
                                     <input type="text" name="email" class="form-control" placeholder="Email" required="">
@@ -80,7 +80,7 @@
         <script src="{{asset('admin/plugins/bootstrap/dist/js/bootstrap.min.js')}}"></script>
         <script src="{{asset('admin/plugins/perfect-scrollbar/dist/perfect-scrollbar.min.js')}}"></script>
         <script src="{{asset('admin/plugins/screenfull/dist/screenfull.js')}}"></script>
-        <script src="{{asset('admin/dist/js/theme.js')}}"></script>
+        {{-- <script src="{{asset('admin/dist/js/theme.js')}}"></script> --}}
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <style type="text/css">
             .login-btn{

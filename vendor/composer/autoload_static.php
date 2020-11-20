@@ -100,6 +100,7 @@ class ComposerStaticInitc888d679221b74b45458c3ef06a9b9ec
             'Prophecy\\' => 9,
             'PhpParser\\' => 10,
             'PhpOption\\' => 10,
+            'Pelago\\' => 7,
         ),
         'O' => 
         array (
@@ -365,6 +366,10 @@ class ComposerStaticInitc888d679221b74b45458c3ef06a9b9ec
         array (
             0 => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption',
         ),
+        'Pelago\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/pelago/emogrifier/src',
+        ),
         'Opis\\Closure\\' => 
         array (
             0 => __DIR__ . '/..' . '/opis/closure/src',
@@ -500,6 +505,13 @@ class ComposerStaticInitc888d679221b74b45458c3ef06a9b9ec
     );
 
     public static $prefixesPsr0 = array (
+        'S' => 
+        array (
+            'Snowfire\\Beautymail\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/snowfire/beautymail/src',
+            ),
+        ),
         'M' => 
         array (
             'Mockery' => 
@@ -3626,6 +3638,14 @@ class ComposerStaticInitc888d679221b74b45458c3ef06a9b9ec
         'PHP_Token_XOR_EQUAL' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_YIELD' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_YIELD_FROM' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'Pelago\\Emogrifier' => __DIR__ . '/..' . '/pelago/emogrifier/src/Emogrifier.php',
+        'Pelago\\Emogrifier\\CssInliner' => __DIR__ . '/..' . '/pelago/emogrifier/src/Emogrifier/CssInliner.php',
+        'Pelago\\Emogrifier\\HtmlProcessor\\AbstractHtmlProcessor' => __DIR__ . '/..' . '/pelago/emogrifier/src/Emogrifier/HtmlProcessor/AbstractHtmlProcessor.php',
+        'Pelago\\Emogrifier\\HtmlProcessor\\CssToAttributeConverter' => __DIR__ . '/..' . '/pelago/emogrifier/src/Emogrifier/HtmlProcessor/CssToAttributeConverter.php',
+        'Pelago\\Emogrifier\\HtmlProcessor\\HtmlNormalizer' => __DIR__ . '/..' . '/pelago/emogrifier/src/Emogrifier/HtmlProcessor/HtmlNormalizer.php',
+        'Pelago\\Emogrifier\\HtmlProcessor\\HtmlPruner' => __DIR__ . '/..' . '/pelago/emogrifier/src/Emogrifier/HtmlProcessor/HtmlPruner.php',
+        'Pelago\\Emogrifier\\Utilities\\ArrayIntersector' => __DIR__ . '/..' . '/pelago/emogrifier/src/Emogrifier/Utilities/ArrayIntersector.php',
+        'Pelago\\Emogrifier\\Utilities\\CssConcatenator' => __DIR__ . '/..' . '/pelago/emogrifier/src/Emogrifier/Utilities/CssConcatenator.php',
         'PharIo\\Manifest\\Application' => __DIR__ . '/..' . '/phar-io/manifest/src/values/Application.php',
         'PharIo\\Manifest\\ApplicationName' => __DIR__ . '/..' . '/phar-io/manifest/src/values/ApplicationName.php',
         'PharIo\\Manifest\\Author' => __DIR__ . '/..' . '/phar-io/manifest/src/values/Author.php',
@@ -4339,6 +4359,10 @@ class ComposerStaticInitc888d679221b74b45458c3ef06a9b9ec
         'SebastianBergmann\\Timer\\RuntimeException' => __DIR__ . '/..' . '/phpunit/php-timer/src/RuntimeException.php',
         'SebastianBergmann\\Timer\\Timer' => __DIR__ . '/..' . '/phpunit/php-timer/src/Timer.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
+        'Snowfire\\Beautymail\\Beautymail' => __DIR__ . '/..' . '/snowfire/beautymail/src/Snowfire/Beautymail/Beautymail.php',
+        'Snowfire\\Beautymail\\BeautymailFacade' => __DIR__ . '/..' . '/snowfire/beautymail/src/Snowfire/Beautymail/BeautymailFacade.php',
+        'Snowfire\\Beautymail\\BeautymailServiceProvider' => __DIR__ . '/..' . '/snowfire/beautymail/src/Snowfire/Beautymail/BeautymailServiceProvider.php',
+        'Snowfire\\Beautymail\\CssInlinerPlugin' => __DIR__ . '/..' . '/snowfire/beautymail/src/Snowfire/Beautymail/CssInlinerPlugin.php',
         'Stancl\\JobPipeline\\JobPipeline' => __DIR__ . '/..' . '/stancl/jobpipeline/src/JobPipeline.php',
         'Stancl\\Tenancy\\Bootstrappers\\CacheTenancyBootstrapper' => __DIR__ . '/..' . '/stancl/tenancy/src/Bootstrappers/CacheTenancyBootstrapper.php',
         'Stancl\\Tenancy\\Bootstrappers\\DatabaseTenancyBootstrapper' => __DIR__ . '/..' . '/stancl/tenancy/src/Bootstrappers/DatabaseTenancyBootstrapper.php',

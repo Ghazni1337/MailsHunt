@@ -69,7 +69,7 @@
                                                                     <i class="ik ik-eye"></i>
                                                                 </a>
                                                             </span> --}}
-                                                            <a href="{{ route('plan.edit', $plan->id) }}" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="Edit plan">
+                                                            <a href="{{ route('plan.edit', $plan->id) }}" class="btn btn-sm btn-info" data-toggle="tooltip" title="Edit plan">
                                                                 <i class="ik ik-edit-2"></i>
                                                             </a>
                                                             <a href="#" class="btn btn-sm btn-danger" data-toggle="tooltip" title="Delete plan" id="del_plan" data-id={{ $plan->id }}>

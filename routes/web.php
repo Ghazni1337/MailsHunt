@@ -67,6 +67,8 @@ Route::post('/api/extractor', 'APIController@saveExtractor');
 //new admin routes
 //
 //LOGIN
+//Begining if the same routes in different names
+//dont know why i did this but...
 Route::get('/', function(){
     return view('admin.login');
 })->name('home');
@@ -74,7 +76,9 @@ Route::get('/', function(){
 Route::get('login', function(){
     return view('admin.login');
 })->name('admin.login');
-Route::post('login', 'AdminController@adminLogin');
+// end of sames
+
+Route::post('login', 'AdminController@adminLogin')->name('login');
 
 //DASHBOARD INDEX
 Route::group(['middleware' => 'auth:admin', 'prefix' => 'admin'], function () {

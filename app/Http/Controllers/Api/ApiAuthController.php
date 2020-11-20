@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Tenant;
 use App\User;
 use JWTAuth;
+use App\Code;
 use Hyn\Tenancy\Environment;
 use Hyn\Tenancy\Models\Website;
 use Hyn\Tenancy\Models\Hostname;
@@ -34,6 +35,9 @@ class ApiAuthController extends Controller
 
         $user = $this->create($request->all());
 
+        //send email verification 
+        $this->verifyEmail($user, $fqdn); 
+
         $credentials = $request->only('email', 'password');
         if ($this->loginAfterSignUp) {
             $token = JWTAuth::attempt($credentials);
@@ -45,6 +49,33 @@ class ApiAuthController extends Controller
             'token'     => $token,
             'fqdn'      => $tenant->hostname->fqdn
         ], 200);
+    }
+
+    private function verifyEmail(User $user, $fqdn)
+    {
+        $data = [];
+        $urlToken = $this->genUrlToken();
+        $data['url'] = "https://www.mailshunt.com?token=".$urlToken."&fqdn=".$fqdn;
+        $data['user'] = $user;
+
+        $beautymail = app()->make(\Snowfire\Beautymail\Beautymail::class);
+        $beautymail->send('emails.verify', ['data'=>$data], function($message) use ($user)
+        {
+            $message
+                ->from('support@mailshunt.com','MailsHunt.com')
+                ->to($user->email)
+                ->subject('Email Verification');
+        });
+        return true;
+    }
+
+    public function genUrlToken()
+    {
+        $code = md5(microtime().time());
+
+        Code::create(['verification_code'=>$code]);
+
+        return $code;
     }
 
     // function to create fully qualified domain name

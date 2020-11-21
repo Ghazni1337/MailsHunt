@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'cf50a4f901e9b3cf259212a12ae34115c4acf68d',
+    'reference' => '49f2e9ca57337209da95dec025c9d91d83e65a8f',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -467,7 +467,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'cf50a4f901e9b3cf259212a12ae34115c4acf68d',
+      'reference' => '49f2e9ca57337209da95dec025c9d91d83e65a8f',
     ),
     'laravel/tinker' => 
     array (
@@ -598,6 +598,15 @@
       array (
       ),
       'reference' => '943b5d70cc5ae7483f6aff6ff43d7e34592ca0f5',
+    ),
+    'orangehill/iseed' => 
+    array (
+      'pretty_version' => 'v2.6.4',
+      'version' => '2.6.4.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '03c73d3f829a74065e14a757f0d749ad4928a15f',
     ),
     'paragonie/random_compat' => 
     array (

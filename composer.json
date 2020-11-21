@@ -16,6 +16,7 @@
         "laravel/cashier": "^12.5",
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
+        "orangehill/iseed": "^2.6",
         "snowfire/beautymail": "^1.1",
         "stripe/stripe-php": "^7.65",
         "symfony/translation": "5.1.7",

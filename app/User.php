@@ -7,10 +7,11 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Hyn\Tenancy\Traits\UsesTenantConnection;
 use Tymon\JWTAuth\Contracts\JWTSubject;
+use Laravel\Cashier\Billable;
 
 class User extends Authenticatable implements JWTSubject
 {
-    use Notifiable, UsesTenantConnection;
+    use Notifiable, UsesTenantConnection, Billable;
 
     /**
      * The attributes that are mass assignable.

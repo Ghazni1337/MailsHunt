@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Hyn\Tenancy\Environment;
 use Hyn\Tenancy\Models\Website;
 use Hyn\Tenancy\Models\Hostname;
+use Whoops\Exception\ErrorException;
 use Closure;
 
 class IdentifyTenant
@@ -23,16 +24,15 @@ class IdentifyTenant
             // Retrieve your hostname
             $hostname = Hostname::where('fqdn', request()->fqdn)->first();
 
-            // $arrHost = $hostname->toArray();
-            // return response()->json($arrHost['website_id']);
-            // $website = Website::where('id', $arrHost['website_id'])->first();
-            
-            $website = $hostname->website;
-            
-            // Now switch the environment to a new tenant.
-            // app(Environment::class)->hostname($hostname);
-            app(Environment::class)->tenant($website);
-            // $environment->hostname($hostname);
+            if ($hostname) {
+                $website = $hostname->website;
+                
+                // Now switch the environment to a new tenant.
+                // app(Environment::class)->hostname($hostname);
+                app(Environment::class)->tenant($website);
+            }else{
+                return response()->json(['success'=>false, 'message'=>'Invalid email or password']);
+            }
         }
 
         return $next($request);

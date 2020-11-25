@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Mail;
 use App\Stat;
 use Illuminate\Http\Request;
+use Goutte\Client;
+use Goutte;
+use Symfony\Component\HttpClient\HttpClient;
+use GuzzleHttp\Client as GuzzleClient;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 
@@ -135,5 +139,23 @@ class MailController extends Controller
         $stats->save();
         return response()->json(array('success' => true, 'verify' => $verify, 'email' => $email));
         // return view("verifier", ['verify' => $verify, 'email' => $email]);
+    }
+
+    public function doWebScraping(Request $request)
+    {
+        $goutteClient = new Client();
+        $guzzleClient = new GuzzleClient(array(
+            'timeout' => 100,
+            'verify' => false
+        ));
+        $goutteClient->setClient($guzzleClient);
+        $crawler = $goutteClient->request('GET', 'https://css-tricks.com');
+        $nodes = [];
+        $nodes = $crawler->filter('a');
+        // $crawler->filter('a')->each(function ($node) {
+        //     array_push($nodes, $node->text());
+        // });
+
+        return $nodes->attr('href');
     }
 }

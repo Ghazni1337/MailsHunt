@@ -7,6 +7,7 @@ use App\Tenant;
 use App\User;
 use JWTAuth;
 use App\Code;
+use App\Account;
 use Hyn\Tenancy\Environment;
 use Hyn\Tenancy\Models\Website;
 use Hyn\Tenancy\Models\Hostname;
@@ -35,6 +36,8 @@ class ApiAuthController extends Controller
 
         $user = $this->create($request->all());
 
+        //save account details for easy gen admin access
+        $this->saveAccount($user, $fqdn);
         //send email verification 
         $this->verifyEmail($user, $fqdn); 
 
@@ -146,7 +149,7 @@ class ApiAuthController extends Controller
         if (!$token = JWTAuth::attempt($input)) {
             return response()->json([
                 'success' => false,
-                'message' => 'Invalid Email or Password',
+                'message' => 'Invalid email or password',
             ], 401);
         }
 
@@ -194,5 +197,18 @@ class ApiAuthController extends Controller
             'success'   => false,
             'message'   => 'No accounts found for this email address'
         ]);
+    }
+
+    public function saveAccount(User $user, $fqdn)
+    {
+        $acct_name = '';
+
+        if (!empty($user->company_name)) {
+            $acct_name = $user->company_name;
+        }else{
+            $acct_name = $user->f_name." ".$user->l_name;
+        }
+        Account::create(['fqdn' => $fqdn, 'acct_name' => $acct_name]);
+        return true;
     }
 }

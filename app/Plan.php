@@ -10,7 +10,7 @@ class Plan extends Model
 	use UsesSystemConnection;
 	
     protected $fillable = [
-    	'title', 'price', 
+    	'stripe_id','title', 'price', 
     	'campaigns', 'users',
     	'daily_emails', 'credits'
 	];

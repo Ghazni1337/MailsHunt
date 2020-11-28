@@ -2,6 +2,9 @@
 
 return [
 
+    'stripe_secret' => env('STRIPE_SECRET', null),
+    'stripe_key'    => env('STRIPE_KEY', null),
+
     'url_base' => env('APP_URL_BASE', 'http://localhost'),
 
     /*
@@ -164,7 +167,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
-        Weidner\Goutte\GoutteServiceProvider::class,
+        Laravel\Cashier\CashierServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -229,7 +232,6 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'Goutte' => Weidner\Goutte\GoutteFacade::class,
 
     ],
 

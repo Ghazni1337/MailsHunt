@@ -17,7 +17,22 @@ class PlanController extends Controller
         $title = 'Plans';
         $plans = Plan::all();
 
+        // $stripe = new \Stripe\StripeClient(
+        //   config('app.stripe_secret')
+        // );
+        // $stripe->products->create([
+        //   'name' => 'MailsHunt',
+        // ]);
+
+        // dd($stripe->products->all());
+        
+
         return view('plans.index',compact('title','plans'));
+    }
+
+    public function getPlansAPI()
+    {
+        return response()->json(['success'=>true, 'plans'=>Plan::all()]);
     }
 
     /**
@@ -30,7 +45,11 @@ class PlanController extends Controller
     {
         $this->validator($request);
 
-        Plan::create($request->all());
+        //save to stripe dash first
+        $stripePlan = $this->saveToStripeDash($request);
+
+        Plan::create( array_merge($request->all(), ['stripe_id' => $stripePlan->id]) );
+
         session()->flash('success','Plan successfully added');
 
         return redirect()->route('plan.all');
@@ -63,14 +82,33 @@ class PlanController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Save the plan on the stripe dashboard
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function saveToStripeDash(Request $request)
     {
-        //
+        $stripe = new \Stripe\StripeClient(
+          config('app.stripe_secret')
+        );
+
+        //save product
+        $plan = $stripe->plans->create([
+          'amount' => $request->price,
+          'currency' => 'usd',
+          'interval' => 'month',
+          'nickname' => $request->title,
+          'product' => 'prod_ISfQlX3XlkZLqg',
+          'metadata'    => [
+                            'users'         => $request->users,
+                            'campaigns'     => $request->campaigns,
+                            'credits'       => $request->credits,
+                            'daily_emails'  => $request->daily_emails
+                            ]
+        ]);
+
+        return $plan;
     }
 
     /**
@@ -101,6 +139,33 @@ class PlanController extends Controller
         $plan = Plan::find($id);
         $plan->update($request->all());
 
+        //since stripe plans are immutable
+        //first delete the plan from the stripe dashboard
+        $stripe = new \Stripe\StripeClient(
+          config('app.stripe_secret')
+        );
+
+        $stripe->plans->delete(
+          $request->id,
+          []
+        );
+
+        //create another plan with the same ID
+        $plan = $stripe->plans->create([
+          'id'          => $request->id,
+          'amount'      => $request->price,
+          'currency'    => 'usd',
+          'interval'    => 'month',
+          'nickname'    => $request->title,
+          'product'     => 'prod_ISfQlX3XlkZLqg',
+          'metadata'    => [
+                            'users'         => $request->users,
+                            'campaigns'     => $request->campaigns,
+                            'credits'       => $request->credits,
+                            'daily_emails'  => $request->daily_emails
+                            ]
+        ]);
+
         session()->flash('success', 'Plan successfully updated');
         return redirect()->route('plan.all');
     }
@@ -113,6 +178,16 @@ class PlanController extends Controller
      */
     public function destroy(Request $request)
     {
+        //delete plan from stripe dash
+        $stripe = new \Stripe\StripeClient(
+          config('app.stripe_secret')
+        );
+
+        $stripe->plans->delete(
+          $request->planID,
+          []
+        );
+
         $plan = Plan::find($request->planID);
         $plan->delete();
         return response()->json(true);

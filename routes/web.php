@@ -94,5 +94,9 @@ Route::group(['middleware' => 'auth:admin', 'prefix' => 'admin'], function () {
     Route::post('add_plan', 'PlanController@store');  
     Route::get('edit_plan/{id}', 'PlanController@edit')->name('plan.edit');
     Route::post('edit_plan/{id}', 'PlanController@update');
-    Route::post('destroy_plan', 'PlanController@destroy')->name('destroy_plan'); 
+    Route::post('destroy_plan', 'PlanController@destroy')->name('destroy_plan');
+
+    //Accounts
+    Route::get('accounts', 'AccountController@index')->name('accounts');
+    Route::get('destroy_account/{id}', 'AccountController@destroy')->name('account.delete');
 });

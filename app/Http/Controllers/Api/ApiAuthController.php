@@ -161,6 +161,11 @@ class ApiAuthController extends Controller
         ]);
     }
 
+    public function currentUser()
+    {
+        return response()->json(['success'=>true, 'user'=>auth()->user()]);
+    }
+
     public function logout(Request $request)
     {
         $this->validate($request, [
@@ -203,7 +208,7 @@ class ApiAuthController extends Controller
     {
         $acct_name = '';
 
-        if (!empty($user->company_name)) {
+        if ($user->company_name) {
             $acct_name = $user->company_name;
         }else{
             $acct_name = $user->f_name." ".$user->l_name;

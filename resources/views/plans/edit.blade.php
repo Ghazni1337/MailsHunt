@@ -7,6 +7,7 @@
                                         <div class="card-body">
                                             <form class="forms-sample" method="post">
                                                 @csrf
+                                                <input type="hidden" name="id" value="{{ $plan->stripe_id }}">
                                                 <div class="form-group row">
                                                     <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Title</label>
                                                     <div class="col-sm-9">

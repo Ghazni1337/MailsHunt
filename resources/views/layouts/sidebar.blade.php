@@ -28,9 +28,9 @@
                                         </a>
                                     </div>
                                 </div>
-                                {{-- <div class="nav-item">
-                                    <a href="{{asset('assets/pages/navbar.html')}}"><i class="ik ik-menu"></i><span>Navigation</span> <span class="badge badge-success">New</span></a>
-                                </div> --}}
+                                <div class="nav-item">
+                                    <a href="{{ route('accounts') }}"><i class="ik ik-users"></i><span>Accounts</span> <span class="badge badge-success">{{ accountsCount() }}</span></a>
+                                </div>
                             </nav>
                         </div>
                     </div>

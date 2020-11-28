@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'Snowfire\\Beautymail\\' => array($vendorDir . '/snowfire/beautymail/src'),
     'Sabberworm\\CSS' => array($vendorDir . '/sabberworm/php-css-parser/lib'),
+    'PayPal' => array($vendorDir . '/paypal/rest-api-sdk-php/lib'),
     'Orangehill\\Iseed' => array($vendorDir . '/orangehill/iseed/src'),
     'Mockery' => array($vendorDir . '/mockery/mockery/library'),
 );

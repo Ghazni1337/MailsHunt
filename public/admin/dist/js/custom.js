@@ -36,6 +36,31 @@
     })
 })
 
+// $(document).on('click', '#delete-acct', function() {
+//     let that = $(this);
+//     let id = $(that).data('id');
+//     swal({
+//         title: "Are you sure?",
+//         text: "This is an irriversible action",
+//         icon: "warning",
+//         buttons: true,
+//         dangerMode: true,
+//         buttons: ["Cancel", "Yes, delete"],
+//     })
+//     .then((willDelete) => {
+//         if (willDelete) {
+//             $.ajax({
+//                 url:page_data.routes.destroy_account,
+//                 type:"POST",
+//                 data: { id, _token: page_data.csrf_token },
+//                 success: function(data){
+//                     handleDeletion(that);
+//                 }
+//             });
+//         }
+//     })
+// })
+
 function handleDeletion(handle)
 {
     $(handle).closest('tr').fadeOut(1000, () =>{

@@ -1,5 +1,6 @@
 <?php
 use App\Plan;
+use App\Account;
 
 if ( ! function_exists('pageJsonData')){
     function pageJsonData(){
@@ -32,6 +33,11 @@ if (! function_exists('plansCount')) {
     function plansCount(){
         return Plan::all()->count();
     }
+}
+
+function accountsCount()
+{
+    return Account::all()->count();
 }
 
 ?>
